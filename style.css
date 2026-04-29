@@ -1258,7 +1258,7 @@ inputs are focused so they are easier to see.
 .search-here input:focus,
 .contact-form input:focus,
 .contact-form textarea:focus {
-    outline: 2px solid #e7eb02;
+    outline: 2px solid #eb0202;
     background-color: var(--input-bg);
 }
 
