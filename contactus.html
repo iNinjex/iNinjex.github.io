@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!-- Tells the browser this is an HTML5 document -->
+
+<html lang="en">
+<!-- Starts the HTML page and sets the language to English -->
+
+<head>
+  <!-- The head section stores page info, title, and links to CSS files -->
+
+  <meta charset="UTF-8">
+  <!-- Allows the page to use standard text characters -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Makes the page responsive on phones, tablets, and desktops -->
+
+  <title>Cart</title>
+  <!-- The title shown on the browser tab -->
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Connects your main CSS file to this page -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Connects Font Awesome so you can use icon classes like cart, user, menu, etc. -->
+</head>
+
+<body>
+<!-- The body contains everything that shows on the page -->
+
+<!-- Dark overlay that appears behind the sidebar when it opens -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Sidebar menu for mobile navigation -->
+<aside class="sidebar" id="sidebar">
+    
+    <!-- Top area of the sidebar with the close button -->
+    <div class="sidebar-top">
+        <button class="close-sidebar" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+            <!-- X icon used to close the sidebar -->
+        </button>
+    </div>
+
+    <!-- Navigation links inside the sidebar -->
+    <nav class="sidebar-links">
+        <a href="search.html">
+            <span>Search Page</span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="home.html">
+            <span>Home Page</span>
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="product.html">
+            <span>Product Page</span>
+            <i class="fa-solid fa-box-open"></i>
+        </a>
+
+        <a href="about.html">
+            <span>About Page</span>
+            <i class="fa-solid fa-circle-info"></i>
+        </a>
+
+        <a href="help.html">
+            <span>Help</span>
+            <i class="fa-solid fa-circle-question"></i>
+        </a>
+
+        <a href="contactus.html">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+    <span class="theme-toggle-text">Dark Mode</span>
+</button>
+    </nav>
+</aside>
+
+<!-- Wraps the whole visible website content -->
+<div class="site-wrapper">
+
+  <!-- Top header section of the page -->
+  <header class="top-header">
+
+    <!-- Row inside the header that holds the left and right sections -->
+    <div class="header-row">
+
+      <!-- Left side of the header -->
+      <div class="left-header">
+
+        <!-- Mobile-only button to open the sidebar -->
+        <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+          <!-- Hamburger menu icon -->
+        </button>
+
+        <!-- Website logo/brand name that links back to the home page -->
+        <a href="home.html" class="brand-name">SEARS</a>
+
+        <!-- Desktop navigation menu -->
+        <nav class="desktop-nav">
+          <a href="home.html">Home</a>
+          <a href="search.html">Search</a>
+          <a href="product.html">Products</a>
+          <a href="about.html">About</a>
+          <a href="help.html">Help</a>
+          <a href="contactus.html">Contact Us</a>
+        </nav>
+      </div>
+
+      <!-- Right side of the header -->
+      <div class="right-header">
+        <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                    </button>
+      
+        <!-- Cart icon that links to the cart page -->
+        <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <!-- Shopping cart icon -->
+
+          <span id="cartCount" class="cart-count hidden">0</span>
+          <!-- Cart item count bubble, hidden until items are added -->
+        </a>
+
+        <!-- User account/sign-in icon -->
+        <a href="signin.html" class="icon-button" aria-label="User account">
+          <i class="fa-solid fa-user"></i>
+          <!-- User profile icon -->
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Search bar section below the main header row -->
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <!-- Search icon -->
+
+      <input type="text" id="headerSearchInput" placeholder="Search">
+      <!-- Search input field where the user types -->
+
+      <div id="suggestions"></div>
+      <!-- Area where JavaScript can show search suggestions -->
+    </div>
+
+  </header>
+
+  <!-- Main page content for the cart page -->
+  <main class="main-content cart-page">
+
+    <!-- Main heading of the cart page -->
+    <h2 class="cart-title">Your Cart</h2>
+
+    <!-- Main cart layout with left and right sections -->
+    <div class="cart-layout">
+
+      <!-- Left side of the cart, where cart items are shown -->
+      <div class="cart-left">
+
+        <!-- Button to go back to the product page -->
+        <a href="product.html" class="cart-btn">← Back to Product</a>
+
+        <!-- One cart item block -->
+        <div class="cart-item">
+
+          <!-- Product image -->
+          <img src="images/dress.jpg" alt="dress" class="cart-item-image">
+
+          <!-- Product details -->
+          <div class="cart-item-info">
+            <h3>Black Dress</h3>
+            <!-- Product name -->
+
+            <p class="seller-text">Unique Bargains - a Sears Marketplace seller</p>
+            <!-- Seller information -->
+
+            <p class="qty-text">Qty: 1</p>
+            <!-- Quantity of the item -->
+
+            <p class="item-price">Dress - $49.99</p>
+            <!-- Product price -->
+
+            <p class="shipping-text">Tax, Shipping & Delivery - $17.00</p>
+            <!-- Extra cost details -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side of the cart, where the order summary is shown -->
+      <div class="cart-right">
+
+        <!-- Order summary box -->
+        <div class="summary-box">
+          <h3>Order Summary (1 item)</h3>
+
+          <!-- Row showing merchandise subtotal -->
+          <div class="summary-row">
+            <span>Merchandise Subtotal</span>
+            <span>$128.00</span>
+          </div>
+
+          <!-- Row showing tax and shipping -->
+          <div class="summary-row">
+            <span>Tax, Shipping & Delivery</span>
+            <span>$17.00</span>
+          </div>
+
+          <!-- Total row with final estimated total and checkout details -->
+          <div class="summary-row total-row">
+            <span>Estimated Total</span>
+            <span>$145.00</span>
+
+            <h4>Card Infomation</h4>
+            <!-- Section title for card info -->
+
+            <p>card Number: 7382 8473 2949</p>
+            <!-- Example card number shown on the page -->
+
+            <p>Pin:3939</p>
+            <!-- Example pin shown on the page -->
+
+            <!-- Button that sends the user to the order confirmation page -->
+            <button class="cart-btn" onclick="window.location.href='order-confirmation.html'">
+              Place Order
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer section at the bottom of the page -->
+  <footer class="bottom-footer">
+    <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+    <p>CAREERS | STORE LOCATOR</p>
+  </footer>
+
+</div>
+
+<!-- Full-page loading screen shown during page transitions -->
+<div class="page-loader" id="pageLoader">
+  <div class="loader-spinner"></div>
+  <!-- Spinner animation -->
+
+  <p>Loading...</p>
+  <!-- Loading text -->
+</div>
+
+<script src="script.js"></script>
+<!-- Connects your JavaScript file to this page -->
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!-- Tells the browser this is an HTML5 document -->
+
+<html lang="en">
+<!-- Starts the HTML page and sets language to English -->
+
+<head>
+    <!-- Head section stores page title, links, and settings -->
+
+    <meta charset="UTF-8">
+    <!-- Supports standard text characters -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes page responsive for mobile and desktop -->
+
+    <title>Clothing</title>
+    <!-- Title shown on browser tab -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Main website CSS file -->
+
+    <link rel="stylesheet" href="appliances.css">
+    <!-- Extra CSS file for this product/category page -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Font Awesome icons library -->
+</head>
+
+<body>
+<!-- Everything visible on page starts here -->
+
+<!-- Dark overlay behind sidebar when opened -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Sidebar menu for mobile navigation -->
+<aside class="sidebar" id="sidebar">
+
+    <!-- Top area with close button -->
+    <div class="sidebar-top">
+        <button class="close-sidebar" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+            <!-- X icon -->
+        </button>
+    </div>
+
+    <!-- Sidebar navigation links -->
+    <nav class="sidebar-links">
+
+        <a href="search.html">
+            <span>Search Page</span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="home.html">
+            <span>Home Page</span>
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="product.html">
+            <span>Product Page</span>
+            <i class="fa-solid fa-box-open"></i>
+        </a>
+
+        <a href="about.html">
+            <span>About Page</span>
+            <i class="fa-solid fa-circle-info"></i>
+        </a>
+
+        <a href="help.html">
+            <span>Help</span>
+            <i class="fa-solid fa-circle-question"></i>
+        </a>
+
+        <a href="contactus.html">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+    <span class="theme-toggle-text">Dark Mode</span>
+</button>
+
+    </nav>
+</aside>
+
+<!-- Wraps the entire website content -->
+<div class="site-wrapper">
+
+    <!-- Top header section -->
+    <header class="top-header">
+
+        <!-- Row containing left and right header content -->
+        <div class="header-row">
+
+            <!-- Left side of header -->
+            <div class="left-header">
+
+                <!-- Mobile hamburger menu button -->
+                <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Website logo -->
+                <a href="home.html" class="brand-name">SEARS</a>
+
+                <!-- Desktop navigation menu -->
+                <nav class="desktop-nav">
+                    <a href="home.html">Home</a>
+                    <a href="search.html">Search</a>
+                    <a href="product.html">Products</a>
+                    <a href="about.html">About</a>
+                    <a href="help.html">Help</a>
+                    <a href="contactus.html">Contact Us</a>
+                </nav>
+
+            </div>
+
+            <!-- Right side of header -->
+            <div class="right-header">
+                <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                    </button>
+
+                <!-- Shopping cart icon -->
+                <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <!-- Number of items in cart -->
+                    <span id="cartCount" class="cart-count">0</span>
+                </a>
+
+                <!-- User account icon -->
+                <a href="signin.html" class="icon-button" aria-label="User account">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Search bar under header -->
+        <div class="search-bar">
+
+            <!-- Search icon -->
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <!-- Search input box -->
+            <input type="text" id="headerSearchInput" placeholder="Search products">
+
+            <!-- Search suggestions area -->
+            <div id="suggestions"></div>
+
+        </div>
+
+    </header>
+
+    <!-- Main page content -->
+    <main class="main-content">
+
+        <!-- Clothing page section -->
+        <section class="appliances-page">
+
+            <!-- Main page title -->
+            <h2 class="page-title">Clothing</h2>
+
+            <!-- Large promotional banner image -->
+            <div class="promo-banner">
+                <img src="images/clothing.jpg" alt="30% off clothing">
+            </div>
+
+            <!-- Product category cards grid -->
+            <div class="appliance-grid">
+
+                <!-- Women's clothing card -->
+                <div class="appliance-card">
+                    <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03" alt="Long Dress">
+                    <h3>Women</h3>
+                </div>
+
+                <!-- Men's clothing card -->
+                <div class="appliance-card">
+                    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" alt="Leather Jacket">
+                    <h3>Men</h3>
+                </div>
+
+                <!-- Kids clothing card -->
+                <div class="appliance-card">
+                    <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8" alt="Kids Frock">
+                    <h3>Kids</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer section -->
+    <footer class="bottom-footer">
+        <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+        <p>CAREERS | STORE LOCATOR</p>
+    </footer>
+
+</div>
+
+<!-- Loading screen shown during page changes -->
+<div class="page-loader" id="pageLoader">
+
+    <!-- Spinner animation -->
+    <div class="loader-spinner"></div>
+
+    <!-- Loading text -->
+    <p>Loading...</p>
+
+</div>
+
+<!-- Connects JavaScript file -->
+<script src="script.js"></script>
+
+</body>
+</html>

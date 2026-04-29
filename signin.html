@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!-- Tells the browser this is an HTML5 document -->
+
+<html lang="en">
+<!-- Starts the HTML page and sets language to English -->
+
+<head>
+    <!-- Head section stores page title, settings, and CSS links -->
+
+    <meta charset="UTF-8">
+    <!-- Allows standard text characters -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the page responsive on mobile, tablet, and desktop -->
+
+    <title>Search Page</title>
+    <!-- Browser tab title -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Main CSS styling file -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Font Awesome icon library -->
+</head>
+
+<body class="search-page">
+<!-- Everything visible on the page starts here -->
+<!-- search-page class allows page-specific CSS -->
+
+<!-- Overlay shown when sidebar opens -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Sidebar navigation menu -->
+<aside class="sidebar" id="sidebar">
+
+    <!-- Top section with close button -->
+    <div class="sidebar-top">
+        <button class="close-sidebar" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+            <!-- X icon closes sidebar -->
+        </button>
+    </div>
+
+    <!-- Sidebar links -->
+    <nav class="sidebar-links">
+
+        <a href="search.html">
+            <span>Search Page</span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="home.html">
+            <span>Home Page</span>
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="product.html">
+            <span>Product Page</span>
+            <i class="fa-solid fa-box-open"></i>
+        </a>
+
+        <a href="about.html">
+            <span>About Page</span>
+            <i class="fa-solid fa-circle-info"></i>
+        </a>
+
+        <a href="help.html">
+            <span>Help</span>
+            <i class="fa-solid fa-circle-question"></i>
+        </a>
+
+        <a href="contactus.html">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+    <span class="theme-toggle-text">Dark Mode</span>
+</button>
+
+    </nav>
+</aside>
+
+<!-- Wraps the full visible website -->
+<div class="site-wrapper">
+
+    <!-- HEADER -->
+    <header class="top-header">
+
+        <!-- Row with left and right header content -->
+        <div class="header-row">
+
+            <!-- Left side of header -->
+            <div class="left-header">
+
+                <!-- Mobile menu button -->
+                <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                    <!-- Hamburger menu icon -->
+                </button>
+
+                <!-- Sears logo -->
+                <a href="home.html" class="brand-name">SEARS</a>
+
+                <!-- Desktop navigation menu -->
+                <nav class="desktop-nav">
+                    <a href="home.html">Home</a>
+                    <a href="search.html">Search</a>
+                    <a href="product.html">Products</a>
+                    <a href="about.html">About</a>
+                    <a href="help.html">Help</a>
+                    <a href="contactus.html">Contact Us</a>
+                </nav>
+
+            </div>
+
+            <!-- Right side of header -->
+            <div class="right-header">
+                <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                    </button>
+
+                <!-- Shopping cart icon -->
+                <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <!-- Cart item count -->
+                    <span id="cartCount" class="cart-count">0</span>
+                </a>
+
+                <!-- User account icon -->
+                <a href="signin.html" class="icon-button">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- HEADER SEARCH -->
+        <div class="search-bar">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <!-- Search icon -->
+
+            <input type="text" id="headerSearchInput" placeholder="Search">
+            <!-- Search input field -->
+
+            <div id="suggestions"></div>
+            <!-- Search suggestions appear here -->
+
+        </div>
+
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- SEARCH ACTION -->
+        <div class="search-section">
+
+            <!-- Main search input box -->
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" id="searchInput" placeholder="Search here">
+
+            </div>
+
+            <!-- Search action buttons -->
+            <div class="search-icons">
+
+                <!-- Filter button -->
+                <button class="icon-btn" id="filterButton" type="button">
+                    <i class="fa-solid fa-sliders"></i>
+                </button>
+
+                <!-- Search submit button -->
+                <button class="icon-btn" id="searchButton" type="button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- STATUS -->
+        <div id="searchStatus" class="search-status"></div>
+        <!-- JavaScript can place search messages here -->
+
+        <!-- RESULTS -->
+        <div class="top-searches">
+
+            <h2>Top Searches 🔥</h2>
+
+            <!-- Search results container -->
+            <div id="searchResults">
+
+                <!-- Result card 1 -->
+                <div class="search-card">
+
+                    <div class="card-left">
+
+                        <div class="circle">S</div>
+
+                        <div>
+                            <p class="title">Shirts</p>
+                            <p class="subtitle">Shirts</p>
+                        </div>
+
+                    </div>
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQPGMzFK4VgjqffWajYiLxXzu9l-kn9rIgkOLc82OSumAA24He95b5THo&s">
+
+                </div>
+
+                <!-- Result card 2 -->
+                <div class="search-card">
+
+                    <div class="card-left">
+
+                        <div class="circle">P</div>
+
+                        <div>
+                            <p class="title">Pants</p>
+                            <p class="subtitle">Pants</p>
+                        </div>
+
+                    </div>
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK3fkDKzTYc4QGXeXxfde7uIeNkWBRrtFm-g&s">
+
+                </div>
+
+                <!-- Result card 3 -->
+                <div class="search-card">
+
+                    <div class="card-left">
+
+                        <div class="circle">S</div>
+
+                        <div>
+                            <p class="title">Shoes</p>
+                            <p class="subtitle">Shoes</p>
+                        </div>
+
+                    </div>
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbPJyO8WBUITGNj0tfah_j01vCfL3EtOstbQ&s">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bottom-footer">
+        <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+        <p>CAREERS | STORE LOCATOR</p>
+    </footer>
+
+</div>
+
+<!-- LOADER -->
+<div class="page-loader" id="pageLoader">
+
+    <!-- Spinner animation -->
+    <div class="loader-spinner"></div>
+
+    <!-- Loading text -->
+    <p>Loading...</p>
+
+</div>
+
+<!-- Connect JavaScript file -->
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-top">
+        <button class="close-sidebar" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <nav class="sidebar-links">
+        <a href="search.html">
+            <span>Search Page</span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="home.html">
+            <span>Home Page</span>
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="product.html">
+            <span>Product Page</span>
+            <i class="fa-solid fa-box-open"></i>
+        </a>
+
+        <a href="about.html">
+            <span>About Page</span>
+            <i class="fa-solid fa-circle-info"></i>
+        </a>
+
+        <a href="help.html">
+            <span>Help</span>
+            <i class="fa-solid fa-circle-question"></i>
+        </a>
+
+        <a href="contactus.html">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+    <span class="theme-toggle-text">Dark Mode</span>
+</button>
+    </nav>
+
+</aside>
+
+<!-- ===== MAIN SITE ===== -->
+<div class="site-wrapper">
+
+<header class="top-header">
+
+    <div class="header-row">
+
+        <div class="left-header">
+            <button class="icon-button mobile-menu-button" id="openSidebar">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <a href="home.html" class="brand-name">SEARS</a>
+
+            <nav class="desktop-nav">
+                <a href="home.html">Home</a>
+                <a href="search.html">Search</a>
+                <a href="product.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+                <a href="contactus.html">Contact Us</a>
+            </nav>
+        </div>
+
+        <div class="right-header">
+            <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                    </button>
+                    
+            <a href="cart.html" class="icon-button cart-icon-wrapper">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cartCount" class="cart-count hidden">0</span>
+            </a>
+
+            <a href="signin.html" class="icon-button">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="headerSearchInput" placeholder="Search">
+        <div id="suggestions"></div>
+    </div>
+
+</header>
+
+<!-- ===== CONTACT FORM ===== -->
+<main class="main-content">
+    <section class="contact-form-section">
+        <h1>Contact Us</h1>
+
+        <form class="contact-form" id="contactForm">
+            <label for="contactName">Username</label>
+            <input type="text" id="contactName" name="contactName" placeholder="Enter your username">
+            <small id="nameError" class="form-error">Username must be at least 4 characters.</small>
+
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="contactEmail" placeholder="Enter your email">
+            <small id="emailError" class="form-error">Use a valid email like @gmail.com or @hotmail.com.</small>
+
+            <label for="contactMessage">Feedback / Message</label>
+            <textarea id="contactMessage" name="contactMessage" rows="6" placeholder="Write your message here"></textarea>
+
+            <button type="submit" class="cart-btn" id="contactSubmitBtn">Send Message</button>
+        </form>
+    </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bottom-footer">
+    <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+    <p>CAREERS | STORE LOCATOR</p>
+</footer>
+
+</div>
+
+<!-- ===== LOADER ===== -->
+<div class="page-loader" id="pageLoader">
+    <div class="loader-spinner"></div>
+    <p>Loading...</p>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

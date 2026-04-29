@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!-- Tells the browser this is an HTML5 document -->
+
+<html lang="en">
+<!-- Starts the HTML document and sets the page language to English -->
+
+<head>
+    <!-- The head section holds page info, title, and linked CSS files -->
+
+    <meta charset="UTF-8">
+    <!-- Lets the page use standard text characters -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the page responsive on mobile, tablet, and desktop -->
+
+    <title>Deals</title>
+    <!-- Title shown on the browser tab -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Links the main CSS file for general website styling -->
+
+    <link rel="stylesheet" href="appliances.css">
+    <!-- Links the extra CSS file used for this category-style page -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Links Font Awesome so icons can be used -->
+</head>
+
+<body>
+<!-- The body contains everything visible on the webpage -->
+
+<!-- Dark overlay shown behind the sidebar when the sidebar opens -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Sidebar navigation menu -->
+<aside class="sidebar" id="sidebar">
+
+    <!-- Top section of the sidebar with the close button -->
+    <div class="sidebar-top">
+        <button class="close-sidebar" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+            <!-- X icon used to close the sidebar -->
+        </button>
+    </div>
+
+    <!-- Sidebar links for moving to other pages -->
+    <nav class="sidebar-links">
+        <a href="search.html">
+            <span>Search Page</span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="home.html">
+            <span>Home Page</span>
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="product.html">
+            <span>Product Page</span>
+            <i class="fa-solid fa-box-open"></i>
+        </a>
+
+        <a href="about.html">
+            <span>About Page</span>
+            <i class="fa-solid fa-circle-info"></i>
+        </a>
+
+        <a href="help.html">
+            <span>Help</span>
+            <i class="fa-solid fa-circle-question"></i>
+        </a>
+
+        <a href="contactus.html">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+    <span class="theme-toggle-text">Dark Mode</span>
+</button>
+    </nav>
+</aside>
+
+<!-- Wraps all the main visible page content -->
+<div class="site-wrapper">
+
+    <!-- Top header section -->
+    <header class="top-header">
+
+        <!-- Row that holds left and right parts of the header -->
+        <div class="header-row">
+
+            <!-- Left side of header -->
+            <div class="left-header">
+
+                <!-- Mobile menu button that opens the sidebar -->
+                <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                    <!-- Hamburger menu icon -->
+                </button>
+
+                <!-- Brand logo/name linking back to home page -->
+                <a href="home.html" class="brand-name">SEARS</a>
+
+                <!-- Desktop navigation menu -->
+                <nav class="desktop-nav">
+                    <a href="home.html">Home</a>
+                    <a href="search.html">Search</a>
+                    <a href="product.html">Products</a>
+                    <a href="about.html">About</a>
+                    <a href="help.html">Help</a>
+                    <a href="contactus.html">Contact Us</a>
+                </nav>
+            </div>
+
+            <!-- Right side of header -->
+            <div class="right-header">
+                <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                    </button>
+
+                <!-- Cart icon that links to the cart page -->
+                <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <!-- Shopping cart icon -->
+
+                    <span id="cartCount" class="cart-count">0</span>
+                    <!-- Shows the current number of cart items -->
+                </a>
+
+                <!-- User account icon linking to sign-in page -->
+                <a href="signin.html" class="icon-button" aria-label="User account">
+                    <i class="fa-solid fa-user"></i>
+                    <!-- User profile icon -->
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Search bar under the main header row -->
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <!-- Search icon -->
+
+            <input type="text" id="headerSearchInput" placeholder="Search products">
+            <!-- Search box where the user types -->
+
+            <div id="suggestions"></div>
+            <!-- Area where search suggestions can appear -->
+        </div>
+
+    </header>
+
+    <!-- Main content of the page -->
+    <main class="main-content">
+
+        <!-- Deals page section -->
+        <section class="appliances-page">
+
+            <!-- Main heading for the page -->
+            <h2 class="page-title">Deals</h2>
+
+            <!-- Large promotional banner image -->
+            <div class="promo-banner">
+                <img src="images/deals.jpg" alt="30% off deals">
+            </div>
+
+            <!-- Grid that holds the deal cards -->
+            <div class="appliance-grid">
+
+                <!-- First deal card -->
+                <div class="appliance-card">
+                    <img src="images/refrigerators.jpg" alt="Deals">
+                    <h3>Buy 1 Get 1 Free Refrigerators</h3>
+                </div>
+
+                <!-- Second deal card -->
+                <div class="appliance-card">
+                    <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1" alt="Washer Deal">
+                    <h3>20% Off Washers & Dryers</h3>
+                </div>
+
+                <!-- Third deal card -->
+                <div class="appliance-card">
+                    <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f" alt="Clothing Sale">
+                    <h3>Up to 50% Off Clothing</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer at the bottom of the page -->
+    <footer class="bottom-footer">
+        <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+        <p>CAREERS | STORE LOCATOR</p>
+    </footer>
+
+</div>
+
+<!-- Full-page loading screen -->
+<div class="page-loader" id="pageLoader">
+
+    <!-- Loading spinner animation -->
+    <div class="loader-spinner"></div>
+
+    <!-- Loading text -->
+    <p>Loading...</p>
+</div>
+
+<!-- Connects the JavaScript file -->
+<script src="script.js"></script>
+
+</body>
+</html>

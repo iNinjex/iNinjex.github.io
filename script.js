@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!-- Tells the browser this is an HTML5 document -->
+
+<html lang="en">
+<!-- Starts the HTML document and sets the page language to English -->
+
+<head>
+<!-- The head section contains page information, title, and linked files -->
+
+<meta charset="UTF-8">
+<!-- Allows the page to use standard text characters -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Makes the page responsive on phones, tablets, and desktops -->
+
+<title>Product Page</title>
+<!-- The title shown on the browser tab -->
+
+<link rel="stylesheet" href="style.css">
+<!-- Links your main CSS file -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!-- Links Font Awesome so icons can be used on the page -->
+</head>
+
+<body class="product-page">
+<!-- The body contains everything visible on the page -->
+<!-- The class "product-page" can be used for page-specific styling -->
+
+<!-- ===== SIDEBAR ===== -->
+<!-- Dark overlay that appears behind the sidebar when it opens -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Sidebar menu used mainly for mobile navigation -->
+<aside class="sidebar" id="sidebar">
+
+    <!-- Top part of the sidebar with the close button -->
+    <div class="sidebar-top">
+        <button class="close-sidebar" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+            <!-- X icon used to close the sidebar -->
+        </button>
+    </div>
+
+    <!-- Sidebar navigation links -->
+    <nav class="sidebar-links">
+        <a href="search.html">
+            <span>Search Page</span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="home.html">
+            <span>Home Page</span>
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="product.html">
+            <span>Product Page</span>
+            <i class="fa-solid fa-box-open"></i>
+        </a>
+
+        <a href="about.html">
+            <span>About Page</span>
+            <i class="fa-solid fa-circle-info"></i>
+        </a>
+
+        <a href="help.html">
+            <span>Help</span>
+            <i class="fa-solid fa-circle-question"></i>
+        </a>
+
+        <a href="contactus.html">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+    <span class="theme-toggle-text">Dark Mode</span>
+</button>
+    </nav>
+</aside>
+
+<!-- ===== MAIN SITE ===== -->
+<!-- Wraps the full visible website content -->
+<div class="site-wrapper">
+
+<header class="top-header">
+<!-- Main header at the top of the page -->
+
+    <div class="header-row">
+    <!-- Holds the left and right parts of the header -->
+
+        <div class="left-header">
+        <!-- Left side of the header -->
+
+            <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+                <!-- Hamburger menu icon for opening sidebar -->
+            </button>
+
+            <a href="home.html" class="brand-name">SEARS</a>
+            <!-- Website logo/brand name that links to home page -->
+
+            <nav class="desktop-nav">
+            <!-- Navigation links shown on desktop -->
+                <a href="home.html">Home</a>
+                <a href="search.html">Search</a>
+                <a href="product.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+                <a href="contactus.html">Contact Us</a>
+            </nav>
+        </div>
+
+        <div class="right-header">
+        <!-- Right side of the header -->
+         <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                    </button>
+
+            <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <!-- Shopping cart icon -->
+
+                <span id="cartCount" class="cart-count hidden">0</span>
+                <!-- Cart item count, hidden until items are added -->
+            </a>
+
+            <a href="signin.html" class="icon-button" aria-label="User account">
+                <i class="fa-solid fa-user"></i>
+                <!-- User account icon -->
+            </a>
+        </div>
+
+    </div>
+
+    <div class="search-bar">
+    <!-- Search bar section below the header row -->
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <!-- Search icon -->
+
+        <input type="text" id="headerSearchInput" placeholder="Search">
+        <!-- Input where the user types a search -->
+
+        <div id="suggestions"></div>
+        <!-- Area where search suggestions can appear -->
+    </div>
+
+</header>
+
+<!-- ===== YOUR PRODUCT SECTION ===== -->
+<main class="product">
+<!-- Main section that displays product cards -->
+
+    <!-- CARD 1 -->
+    <!-- First product card -->
+    <div class="card">
+
+        <img src="images/dress.jpg" alt="dress">
+        <!-- Product image -->
+
+        <div>
+            <!-- Product information -->
+            <h2>Unomatch Women's Spring & Summer Casual Slim A-Line Midi Dress With Pockets – Round Neck</h2>
+            <p>Price: $27.17</p>
+            <p>Sizes: XXS XS S M L XL XXL</p>
+            <p>Pickup: Available today</p>
+            <p>Shipping: Free 2-day shipping</p>
+        </div>
+
+        <div>
+            <!-- Add to cart button area -->
+            <button class="cart-btn add-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <!-- Second product card -->
+    <div class="card">
+
+        <img src="images/dress2.jpg" alt="dress 2">
+        <!-- Product image -->
+
+        <div>
+            <!-- Product information -->
+            <h2>Unomatch Women's Spring & Summer Casual Slim A-Line Midi Dress With Pockets – Round Neck</h2>
+            <p>Price: $27.17</p>
+            <p>Sizes: XXS XS S M L XL XXL</p>
+            <p>Pickup: Available today</p>
+            <p>Shipping: Free 2-day shipping</p>
+        </div>
+
+        <div>
+            <!-- Add to cart button area -->
+            <button class="cart-btn add-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <!-- Third product card -->
+    <div class="card">
+
+        <img src="images/dress3.jpg" alt="dress 3">
+        <!-- Product image -->
+
+        <div>
+            <!-- Product information -->
+            <h2>Unique Bargains Women's Elegant Boat Neck 3/4 Sleeves Wear To Work Midi Split Sheath Casual Dress</h2>
+            <p>Price: $49.99</p>
+            <p>Sizes: XXS XS S M L XL XXL</p>
+            <p>Pickup: Available today</p>
+            <p>Shipping: Free 2-day shipping</p>
+        </div>
+
+        <div>
+            <!-- Add to cart button area -->
+            <button class="cart-btn add-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bottom-footer">
+<!-- Footer section at the bottom of the page -->
+    <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+    <p>CAREERS | STORE LOCATOR</p>
+</footer>
+
+</div>
+
+<!-- Loading screen shown during page transitions -->
+<div class="page-loader" id="pageLoader">
+    <div class="loader-spinner"></div>
+    <!-- Spinner animation -->
+
+    <p>Loading...</p>
+    <!-- Loading text -->
+</div>
+
+<script src="script.js"></script>
+<!-- Links your JavaScript file -->
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic page settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab title -->
+    <title>Appliances</title>
+
+    <!-- Main website CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Appliances page CSS -->
+    <link rel="stylesheet" href="appliances.css">
+
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- Dark overlay when sidebar opens on mobile -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Mobile sidebar menu -->
+<aside class="sidebar" id="sidebar">
+
+    <!-- Top section with close button -->
+    <div class="sidebar-top">
+        <button class="close-sidebar" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <!-- Sidebar navigation links -->
+    <nav class="sidebar-links">
+
+        <a href="search.html">
+            <span>Search Page</span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="home.html">
+            <span>Home Page</span>
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="product.html">
+            <span>Product Page</span>
+            <i class="fa-solid fa-box-open"></i>
+        </a>
+
+        <a href="about.html">
+            <span>About Page</span>
+            <i class="fa-solid fa-circle-info"></i>
+        </a>
+
+        <a href="help.html">
+            <span>Help</span>
+            <i class="fa-solid fa-circle-question"></i>
+        </a>
+
+        <a href="contactus.html">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+    <span class="theme-toggle-text">Dark Mode</span>
+</button>
+
+    </nav>
+</aside>
+
+<!-- Main website wrapper -->
+<div class="site-wrapper">
+
+    <!-- Header -->
+    <header class="top-header">
+
+        <!-- Top row -->
+        <div class="header-row">
+
+            <!-- Left side -->
+            <div class="left-header">
+
+                <!-- Mobile hamburger menu -->
+                <button class="icon-button mobile-menu-button" id="openSidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Sears logo -->
+                <a href="home.html" class="brand-name">SEARS</a>
+
+                <!-- Desktop navbar -->
+                <nav class="desktop-nav">
+                    <a href="home.html">Home</a>
+                    <a href="search.html">Search</a>
+                    <a href="product.html">Products</a>
+                    <a href="about.html">About</a>
+                    <a href="help.html">Help</a>
+                    <a href="contactus.html">Contact Us</a>
+                </nav>
+
+            </div>
+
+            <!-- Right side icons -->
+            <div class="right-header">
+                <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                    </button>
+                    
+                <!-- Cart icon -->
+                <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cartCount" class="cart-count">0</span>
+                </a>
+
+                <!-- User account icon -->
+                <a href="signin.html" class="icon-button">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Search bar -->
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="headerSearchInput" placeholder="Search products">
+            <div id="suggestions"></div>
+        </div>
+
+    </header>
+
+    <!-- Main page content -->
+    <main class="main-content">
+
+        <section class="appliances-page">
+
+            <!-- Page heading -->
+            <h2 class="page-title">Appliances</h2>
+
+            <!-- Promo banner image -->
+            <div class="promo-banner">
+                <img src="images/appliances.jpg" alt="30% off appliances">
+            </div>
+
+            <!-- Product category grid -->
+            <div class="appliance-grid">
+
+                <!-- Card 1 -->
+                <div class="appliance-card">
+                    <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1" alt="Refrigerators">
+                    <h3>Refrigerators</h3>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="appliance-card">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Washers">
+                    <h3>Washers</h3>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="appliance-card">
+                    <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1" alt="Dryers">
+                    <h3>Dryers</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bottom-footer">
+        <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+        <p>CAREERS | STORE LOCATOR</p>
+    </footer>
+
+</div>
+
+<!-- Loading screen -->
+<div class="page-loader" id="pageLoader">
+    <div class="loader-spinner"></div>
+    <p>Loading...</p>
+</div>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>

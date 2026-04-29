@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic page setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab title -->
+    <title>About Page</title>
+
+    <!-- Main website styling -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="about-page">
+
+    <!-- Dark overlay shown when mobile sidebar opens -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Mobile sidebar navigation menu -->
+    <aside class="sidebar" id="sidebar">
+
+        <!-- Sidebar top area with close button -->
+        <div class="sidebar-top">
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Sidebar links -->
+        <nav class="sidebar-links">
+
+            <a href="search.html">
+                <span>Search Page</span>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+
+            <a href="home.html">
+                <span>Home Page</span>
+                <i class="fa-solid fa-house"></i>
+            </a>
+
+            <a href="product.html">
+                <span>Product Page</span>
+                <i class="fa-solid fa-box-open"></i>
+            </a>
+
+            <a href="about.html">
+                <span>About Page</span>
+                <i class="fa-solid fa-circle-info"></i>
+            </a>
+
+            <a href="help.html">
+                <span>Help</span>
+                <i class="fa-solid fa-circle-question"></i>
+            </a>
+
+            <a href="contactus.html">
+                <span>Contact Us</span>
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+    <span class="theme-toggle-text">Dark Mode</span>
+</button>
+
+        </nav>
+    </aside>
+
+    <!-- Main site wrapper -->
+    <div class="site-wrapper">
+
+        <!-- Header section -->
+        <header class="top-header">
+
+            <!-- Top row inside header -->
+            <div class="header-row">
+
+                <!-- Left side of header -->
+                <div class="left-header">
+
+                    <!-- Mobile hamburger menu -->
+                    <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <!-- Sears logo / home link -->
+                    <a href="home.html" class="brand-name">SEARS</a>
+
+                    <!-- Desktop navigation bar -->
+                    <nav class="desktop-nav">
+                        <a href="home.html">Home</a>
+                        <a href="search.html">Search</a>
+                        <a href="product.html">Products</a>
+                        <a href="about.html">About</a>
+                        <a href="help.html">Help</a>
+                        <a href="contactus.html">Contact Us</a>
+                    </nav>
+                </div>
+
+                <!-- Right side icons -->
+                <div class="right-header">
+                    <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                    </button>
+                    
+                    <!-- Shopping cart icon -->
+                    <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cartCount" class="cart-count">0</span>
+                    </a>
+
+                    <!-- User sign in icon -->
+                    <a href="signin.html" class="icon-button" aria-label="User account">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Header search bar -->
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="headerSearchInput" placeholder="Search">
+                <div id="suggestions"></div>
+            </div>
+
+        </header>
+
+        <!-- Main About Page Content -->
+        <main class="main-content">
+
+            <div class="form-page">
+
+                <div class="top-text">
+
+                    <!-- Intro heading -->
+                    <h2>SEARS</h2>
+
+                    <!-- Intro text -->
+                    <p>
+                        A pioneer brand that reshaped the retail landscape.
+                    </p>
+
+                    <p>
+                        How did a simple watch company grow into America's favorite store in the 20th century?
+                        Let's get into the retail time machine and journey together to the past.
+                    </p>
+
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item">
+                        <img src="images/sears1.jpg" alt="sears1">
+
+                        <div class="timeline-text">
+                            <p class="year">1886</p>
+                            <p>The company was founded by Richard Warren Sears in the year 1886.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item">
+                        <img src="images/sears2.jpg" alt="sears2">
+
+                        <div class="timeline-text">
+                            <p class="year">1908</p>
+                            <p>Sears began selling entire home kits through mail-order catalogs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item">
+                        <img src="images/sears3.jpg" alt="sears3">
+
+                        <div class="timeline-text">
+                            <p class="year">1925</p>
+                            <p>Sears opened its first retail store on Chicago's west side.</p>
+                        </div>
+                    </div>
+
+                    <!-- Button to reveal more history -->
+                    <button class="load-more">Load more details</button>
+
+                    <!-- Hidden extra history content -->
+                    <div class="extra-detail" style="display: none;">
+
+                        <img src="images/sears4.jpg" alt="sears4">
+
+                        <div class="timeline-item">
+                            <div class="timeline-text">
+                                <p class="year">1974</p>
+                                <p>
+                                    As a towering symbol of retail dominance,
+                                    Sears unveiled the Sears Tower.
+                                    It was world’s tallest building for 22 years.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- FAQ section -->
+                    <div class="faq-list">
+                        <h1>FAQs</h1>
+                        <p>Customer Service</p>
+                        <p>Your Account</p>
+                        <p>Get To Know Us</p>
+                        <p>Shipping & Returns</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- Footer section -->
+        <footer class="bottom-footer">
+            <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+            <p>CAREERS | STORE LOCATOR</p>
+        </footer>
+
+    </div>
+
+    <!-- Loading screen -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
