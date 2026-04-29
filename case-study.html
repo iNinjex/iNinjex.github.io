@@ -6,89 +6,142 @@
   <title>Sears Website Redesign Case Study</title>
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-  <main class="case-study-page">
+<!-- ===== SIDEBAR ===== -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+        <button class="close-sidebar" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <nav class="sidebar-links">
+        <a href="search.html"><span>Search Page</span><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="index.html"><span>Home Page</span><i class="fa-solid fa-house"></i></a>
+        <a href="product.html"><span>Product Page</span><i class="fa-solid fa-box-open"></i></a>
+        <a href="about.html"><span>About Page</span><i class="fa-solid fa-circle-info"></i></a>
+        <a href="help.html"><span>Help</span><i class="fa-solid fa-circle-question"></i></a>
+        <a href="contactus.html"><span>Contact Us</span><i class="fa-solid fa-envelope"></i></a>
+        <a href="case-study.html"><span>Case Study</span><i class="fa-solid fa-file"></i></a>
+
+        <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle>
+            <span class="theme-toggle-text">Dark Mode</span>
+        </button>
+    </nav>
+</aside>
+
+<!-- ===== MAIN SITE ===== -->
+<div class="site-wrapper">
+
+<header class="top-header">
+    <div class="header-row">
+
+        <div class="left-header">
+            <button class="icon-button mobile-menu-button" id="openSidebar">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <a href="index.html" class="brand-name">SEARS</a>
+
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="search.html">Search</a>
+                <a href="product.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+                <a href="contactus.html">Contact Us</a>
+                <a href="case-study.html">Case Study</a>
+            </nav>
+        </div>
+
+        <div class="right-header">
+            <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle>
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <a href="cart.html" class="icon-button cart-icon-wrapper">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cartCount" class="cart-count">0</span>
+            </a>
+
+            <a href="signin.html" class="icon-button">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+
+    </div>
+</header>
+
+<!-- ===== CASE STUDY CONTENT ===== -->
+<main class="case-study">
+
+    <h1>Sears Website Redesign Case Study</h1>
 
     <section>
-      <h1>Sears Website Redesign Case Study</h1>
-      <p>
-        This case study documents the redesign process for a Sears-inspired retail website.
-        The goal was to improve the shopping experience by creating clearer navigation,
-        better page organization, and a more modern visual layout.
-      </p>
+        <h2>Problem</h2>
+        <p>
+            The original experience felt difficult to navigate because users needed a clearer way
+            to browse categories, search for products, and move through the shopping process.
+        </p>
     </section>
 
     <section>
-      <h2>Problem</h2>
-      <p>
-        The original experience felt difficult to navigate because users needed a clearer way
-        to browse categories, search for products, access help pages, and move through the
-        shopping process. A retail website needs to help users find products quickly, understand
-        where they are, and complete actions like signing in, adding items to a cart, or finding
-        support.
-      </p>
+        <h2>My Role</h2>
+        <p>
+            This was a team project, but I focused on front-end layout, navigation, and usability
+            improvements across pages like Home, Search, Product, Cart, and Help.
+        </p>
     </section>
 
     <section>
-      <h2>My Role</h2>
-      <p>
-        This was a team project, but my focus was on improving the front-end structure,
-        page layout, navigation experience, and usability of the website. I worked on making
-        the site easier to move through across pages such as Home, Search, Product, Cart,
-        About, Help, Sign In, and Sign Up.
-      </p>
+        <h2>Process</h2>
+        <p>
+            I analyzed the existing structure and improved navigation, spacing, visual hierarchy,
+            and consistency across pages.
+        </p>
     </section>
 
     <section>
-      <h2>Process</h2>
-      <p>
-        I began by reviewing the existing page structure and identifying areas where the user
-        flow could be improved. The main focus areas were navigation, spacing, visual hierarchy,
-        page consistency, and responsive layout. From there, I adjusted the design so the website
-        felt more organized and easier to use.
-      </p>
+        <h2>Design Decisions</h2>
+        <p>
+            Navigation was made consistent, layouts were cleaned up, and UI elements were styled
+            to improve clarity and usability.
+        </p>
     </section>
 
     <section>
-      <h2>Design Decisions</h2>
-      <p>
-        Several decisions were made to improve usability. The navigation was made more consistent
-        across pages so users could move between major sections without confusion. Product and
-        category areas were organized visually so users could quickly understand what each page was
-        for. Buttons, links, and page sections were styled consistently to make the interface feel
-        more complete and professional.
-      </p>
+        <h2>Testing and Feedback</h2>
+        <p>
+            I tested navigation, responsiveness, and layout across pages. Feedback helped improve
+            spacing, linking, and mobile usability.
+        </p>
     </section>
 
     <section>
-      <h2>Testing and Feedback</h2>
-      <p>
-        The redesign was tested by opening the site in the browser, clicking through the navigation,
-        checking page links, and reviewing the layout across different screen sizes. Feedback and
-        testing helped reveal where spacing, page linking, and mobile navigation needed improvement.
-        Based on that testing, I adjusted links, improved layout consistency, and made sure the site
-        worked as a complete multi-page experience.
-      </p>
+        <h2>Final Product</h2>
+        <p>
+            The final site provides a cleaner layout, better navigation, and a more complete
+            shopping experience.
+        </p>
+
+        <a href="index.html" class="btn">View Live Website</a>
     </section>
 
-    <section>
-      <h2>Final Product</h2>
-      <p>
-        The final website is a multi-page retail redesign with pages for products, search,
-        cart, deals, help, account access, and category browsing. Compared to the original
-        concept, the final version provides a cleaner structure, clearer navigation, and a more
-        complete shopping experience.
-      </p>
+</main>
 
-      <p>
-        <a href="index.html">View the live redesigned website</a>
-      </p>
-    </section>
+<footer class="bottom-footer">
+    <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+</footer>
 
-  </main>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -1666,3 +1666,20 @@ body.dark-mode input {
 body.dark-mode .top-header {
     background-color: #0d1b2a;
 }
+/* Case Study Page */
+.case-study {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.case-study h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.case-study h2 {
+    margin-top: 30px;
+    color: #0457c7;
+}
