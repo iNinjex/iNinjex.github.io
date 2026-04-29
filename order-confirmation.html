@@ -2,227 +2,44 @@
 <!-- Tells the browser this is an HTML5 document -->
 
 <html lang="en">
-<!-- Starts the HTML page and sets language to English -->
+<!-- Starts the HTML page and sets the language to English -->
 
 <head>
-<!-- The head section stores page settings, title, and CSS links -->
+  <!-- Head section stores page title, settings, and CSS links -->
 
-<meta charset="UTF-8">
-<!-- Allows standard text characters -->
+  <meta charset="UTF-8">
+  <!-- Allows standard text characters -->
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Makes the page responsive on mobile and desktop -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Makes the page responsive on mobile and desktop -->
 
-<title>Help Details</title>
-<!-- Title shown on browser tab -->
+  <title>Order Confirmed</title>
+  <!-- Title shown on the browser tab -->
 
-<link rel="stylesheet" href="style.css">
-<!-- Main CSS file for styling -->
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<!-- Font Awesome icons library -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Connects the main CSS file -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 <!-- Everything visible on the page starts here -->
 
-<!-- Dark overlay shown behind the sidebar when opened -->
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <!-- Main confirmation box centered on the page -->
+  <div class="confirmation-container">
 
-<!-- Sidebar navigation menu -->
-<aside class="sidebar" id="sidebar">
+    <!-- Main success message -->
+    <h1>Order Placed!</h1>
 
-    <!-- Top section of sidebar with close button -->
-    <div class="sidebar-top">
-        <button class="close-sidebar" id="closeSidebar">
-            <i class="fa-solid fa-xmark"></i>
-            <!-- X icon used to close sidebar -->
-        </button>
-    </div>
+    <!-- Message telling the user order was successful -->
+    <p>Your order has been successfully placed.</p>
 
-    <!-- Sidebar links -->
-    <nav class="sidebar-links">
+    <!-- Displays example tracking ID -->
+    <p>Tracking ID: <strong>#123456</strong></p>
 
-        <a href="search.html">
-            <span>Search Page</span>
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </a>
+    <!-- Button/link that sends user back to home page -->
+    <a href="home.html" class="home-btn">Go Back Home</a>
 
-        <a href="home.html">
-            <span>Home Page</span>
-            <i class="fa-solid fa-house"></i>
-        </a>
-
-        <a href="product.html">
-            <span>Product Page</span>
-            <i class="fa-solid fa-box-open"></i>
-        </a>
-
-        <a href="about.html">
-            <span>About Page</span>
-            <i class="fa-solid fa-circle-info"></i>
-        </a>
-
-        <a href="help.html">
-            <span>Help</span>
-            <i class="fa-solid fa-circle-question"></i>
-        </a>
-
-        <a href="contactus.html">
-            <span>Contact Us</span>
-            <i class="fa-solid fa-envelope"></i>
-        </a>
-        <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
-    <span class="theme-toggle-text">Dark Mode</span>
-</button>
-
-    </nav>
-</aside>
-
-<!-- Wraps the main website content -->
-<div class="site-wrapper">
-
-<!-- Header section -->
-<header class="top-header">
-
-    <!-- Header row with left and right sides -->
-    <div class="header-row">
-
-        <!-- Left side of header -->
-        <div class="left-header">
-
-            <!-- Mobile menu button -->
-            <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
-                <i class="fa-solid fa-bars"></i>
-                <!-- Hamburger menu icon -->
-            </button>
-
-            <!-- Sears logo -->
-            <a href="home.html" class="brand-name">SEARS</a>
-
-            <!-- Desktop navigation menu -->
-            <nav class="desktop-nav">
-                <a href="home.html">Home</a>
-                <a href="search.html">Search</a>
-                <a href="product.html">Products</a>
-                <a href="about.html">About</a>
-                <a href="help.html">Help</a>
-                <a href="contactus.html">Contact Us</a>
-            </nav>
-
-        </div>
-
-        <!-- Right side of header -->
-        <div class="right-header">
-            <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
-                    <i class="fa-solid fa-moon"></i>
-                    </button>
-
-            <!-- Cart icon -->
-            <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-
-                <!-- Cart item count -->
-                <span id="cartCount" class="cart-count">0</span>
-            </a>
-
-            <!-- User account icon -->
-            <a href="signin.html" class="icon-button" aria-label="User account">
-                <i class="fa-solid fa-user"></i>
-            </a>
-
-        </div>
-
-    </div>
-
-    <!-- Search bar below header -->
-    <div class="search-bar">
-
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <!-- Search icon -->
-
-        <input type="text" id="headerSearchInput" placeholder="Search">
-        <!-- Search input box -->
-
-        <div id="suggestions"></div>
-        <!-- Search suggestions appear here -->
-
-    </div>
-
-</header>
-
-<!-- Main page content -->
-<main class="main-content">
-
-    <!-- Main title -->
-    <h1 class="help-title">Help Center</h1>
-
-    <!-- First help information box -->
-    <div class="help-box">
-        <h2>Order Management</h2>
-        <p>Email address and order number</p>
-        <p>Return in-store or online</p>
-        <p>Most products can be returned in new condition</p>
-    </div>
-
-    <!-- Second help information box -->
-    <div class="help-box">
-        <h2>Order Management</h2>
-        <p>Email address and order number</p>
-        <p>Return in-store or online</p>
-        <p>Most products can be returned in new condition</p>
-    </div>
-
-    <!-- Third help information box -->
-    <div class="help-box">
-        <h2>Pickup, Shipping & Delivery</h2>
-        <p>Parcel shipping</p>
-        <p>Change delivery window or reschedule delivery</p>
-        <p>Installation price is $100</p>
-    </div>
-
-    <!-- Fourth help information box -->
-    <div class="help-box">
-        <h2>Product Support</h2>
-        <p>Protection agreements</p>
-        <p>Warranty information up to 2 years</p>
-        <p>Repair order status</p>
-        <p>Find product manuals</p>
-    </div>
-
-    <!-- Container for the back button -->
-    <div class="button-container">
-
-        <!-- Button sends user back to help page -->
-        <button class="help-page-btn" onclick="window.location.href='help.html'">
-            Back to Help
-        </button>
-
-    </div>
-
-</main>
-
-<!-- Footer section -->
-<footer class="bottom-footer">
-    <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
-    <p>CAREERS | STORE LOCATOR</p>
-</footer>
-
-</div>
-
-<!-- Full page loading screen -->
-<div class="page-loader" id="pageLoader">
-
-    <!-- Loading spinner -->
-    <div class="loader-spinner"></div>
-
-    <!-- Loading text -->
-    <p>Loading...</p>
-
-</div>
-
-<!-- Connects JavaScript file -->
-<script src="script.js"></script>
+  </div>
 
 </body>
 </html>

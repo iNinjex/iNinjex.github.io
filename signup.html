@@ -2,7 +2,7 @@
 <!-- Tells the browser this is an HTML5 document -->
 
 <html lang="en">
-<!-- Starts the HTML page and sets language to English -->
+<!-- Starts the HTML page and sets the language to English -->
 
 <head>
 <!-- The head section stores page title, settings, and CSS links -->
@@ -13,22 +13,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Makes the page responsive on phones, tablets, and desktops -->
 
-<title>Sign In</title>
+<title>Sign Up</title>
 <!-- Title shown on the browser tab -->
 
 <link rel="stylesheet" href="style.css">
-<!-- Main CSS file for styling -->
+<!-- Main CSS file for styling the page -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <!-- Font Awesome icon library -->
 </head>
 
-<body class="signin-page">
+<body class="signup-page">
 <!-- Everything visible on the page starts here -->
-<!-- signin-page class allows page-specific styling -->
+<!-- signup-page class allows page-specific styling -->
 
 <!-- ===== SIDEBAR ===== -->
-<!-- Dark overlay shown when sidebar opens -->
+<!-- Dark overlay shown behind the sidebar when it opens -->
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
 <!-- Sidebar navigation menu -->
@@ -38,7 +38,7 @@
     <div class="sidebar-top">
         <button class="close-sidebar" id="closeSidebar">
             <i class="fa-solid fa-xmark"></i>
-            <!-- X icon closes sidebar -->
+            <!-- X icon closes the sidebar -->
         </button>
     </div>
 
@@ -82,14 +82,14 @@
 </aside>
 
 <!-- ===== MAIN SITE ===== -->
-<!-- Wraps the visible website content -->
+<!-- Wraps the main visible website content -->
 <div class="site-wrapper">
 
 <header class="top-header">
 <!-- Top header section -->
 
     <div class="header-row">
-    <!-- Row holding left and right sides of header -->
+    <!-- Row holding left and right header content -->
 
         <div class="left-header">
         <!-- Left side of header -->
@@ -100,7 +100,7 @@
             </button>
 
             <a href="home.html" class="brand-name">SEARS</a>
-            <!-- Sears logo linking to homepage -->
+            <!-- Sears logo linking to the home page -->
 
             <nav class="desktop-nav">
             <!-- Desktop navigation links -->
@@ -124,7 +124,7 @@
                 <!-- Shopping cart icon -->
 
                 <span id="cartCount" class="cart-count">0</span>
-                <!-- Shows number of items in cart -->
+                <!-- Shows the number of items in the cart -->
             </a>
 
             <a href="signin.html" class="icon-button" aria-label="User account">
@@ -136,7 +136,7 @@
     </div>
 
     <div class="search-bar">
-    <!-- Search bar below header -->
+    <!-- Search bar under the header -->
 
         <i class="fa-solid fa-magnifying-glass"></i>
         <!-- Search icon -->
@@ -145,47 +145,47 @@
         <!-- Search input field -->
 
         <div id="suggestions"></div>
-        <!-- Search suggestions appear here -->
+        <!-- Search suggestions can appear here -->
     </div>
 
 </header>
 
-<!-- ===== SIGN IN FORM ===== -->
+<!-- ===== SIGNUP FORM ===== -->
 <main class="form-page">
-<!-- Main sign in form section -->
+<!-- Main sign up form section -->
 
-    <h2>Sign In</h2>
+    <h2>Sign Up</h2>
     <!-- Page heading -->
 
-    <label>Enter login ID:</label>
-    <!-- Username label -->
+    <label>Choose username:</label>
+    <!-- Label for the username input -->
 
     <input type="text" placeholder="Enter username">
-    <!-- Username input field -->
+    <!-- Input field where the user types a username -->
 
-    <label>Enter password:</label>
-    <!-- Password label -->
+    <label>Choose password:</label>
+    <!-- Label for the password input -->
 
     <input type="password" placeholder="Enter password">
-    <!-- Password input field -->
+    <!-- Input field where the user types a password -->
 
-    <button type="button" class="cart-btn" id="signinButton">
-        Sign In
+    <button type="button" class="cart-btn" id="signupButton">
+        Sign Up
     </button>
-    <!-- Button used to sign in -->
+    <!-- Button used to submit the sign up action -->
 
 </main>
 
 <!-- FOOTER -->
 <footer class="bottom-footer">
-<!-- Footer section -->
+<!-- Footer section at the bottom of the page -->
     <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
     <p>CAREERS | STORE LOCATOR</p>
 </footer>
 
 </div>
 
-<!-- Loading screen shown during sign in or page transitions -->
+<!-- Loading screen shown during sign up or page transitions -->
 <div class="page-loader" id="pageLoader">
 
     <p id="loaderText">Loading...</p>
@@ -195,13 +195,13 @@
         <!-- Outer progress bar container -->
 
         <div class="progress-bar-fill" id="progressBarFill"></div>
-        <!-- Inner filling progress bar -->
+        <!-- Inner bar that fills as loading progresses -->
     </div>
 
 </div>
 
 <script src="script.js"></script>
-<!-- Connects JavaScript file -->
+<!-- Links your JavaScript file -->
 
 </body>
 </html>

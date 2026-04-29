@@ -5,35 +5,36 @@
 <!-- Starts the HTML page and sets language to English -->
 
 <head>
-    <!-- Head section stores page title, settings, and CSS links -->
+<!-- The head section stores page title, settings, and CSS links -->
 
-    <meta charset="UTF-8">
-    <!-- Allows standard text characters -->
+<meta charset="UTF-8">
+<!-- Allows standard text characters -->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Makes the page responsive on mobile, tablet, and desktop -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Makes the page responsive on phones, tablets, and desktops -->
 
-    <title>Search Page</title>
-    <!-- Browser tab title -->
+<title>Sign In</title>
+<!-- Title shown on the browser tab -->
 
-    <link rel="stylesheet" href="style.css">
-    <!-- Main CSS styling file -->
+<link rel="stylesheet" href="style.css">
+<!-- Main CSS file for styling -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Font Awesome icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!-- Font Awesome icon library -->
 </head>
 
-<body class="search-page">
+<body class="signin-page">
 <!-- Everything visible on the page starts here -->
-<!-- search-page class allows page-specific CSS -->
+<!-- signin-page class allows page-specific styling -->
 
-<!-- Overlay shown when sidebar opens -->
+<!-- ===== SIDEBAR ===== -->
+<!-- Dark overlay shown when sidebar opens -->
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
 <!-- Sidebar navigation menu -->
 <aside class="sidebar" id="sidebar">
 
-    <!-- Top section with close button -->
+    <!-- Top section of sidebar with close button -->
     <div class="sidebar-top">
         <button class="close-sidebar" id="closeSidebar">
             <i class="fa-solid fa-xmark"></i>
@@ -41,7 +42,7 @@
         </button>
     </div>
 
-    <!-- Sidebar links -->
+    <!-- Sidebar navigation links -->
     <nav class="sidebar-links">
 
         <a href="search.html">
@@ -80,203 +81,127 @@
     </nav>
 </aside>
 
-<!-- Wraps the full visible website -->
+<!-- ===== MAIN SITE ===== -->
+<!-- Wraps the visible website content -->
 <div class="site-wrapper">
 
-    <!-- HEADER -->
-    <header class="top-header">
+<header class="top-header">
+<!-- Top header section -->
 
-        <!-- Row with left and right header content -->
-        <div class="header-row">
+    <div class="header-row">
+    <!-- Row holding left and right sides of header -->
 
-            <!-- Left side of header -->
-            <div class="left-header">
+        <div class="left-header">
+        <!-- Left side of header -->
 
-                <!-- Mobile menu button -->
-                <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
-                    <i class="fa-solid fa-bars"></i>
-                    <!-- Hamburger menu icon -->
-                </button>
+            <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+                <!-- Hamburger menu icon -->
+            </button>
 
-                <!-- Sears logo -->
-                <a href="home.html" class="brand-name">SEARS</a>
+            <a href="home.html" class="brand-name">SEARS</a>
+            <!-- Sears logo linking to homepage -->
 
-                <!-- Desktop navigation menu -->
-                <nav class="desktop-nav">
-                    <a href="home.html">Home</a>
-                    <a href="search.html">Search</a>
-                    <a href="product.html">Products</a>
-                    <a href="about.html">About</a>
-                    <a href="help.html">Help</a>
-                    <a href="contactus.html">Contact Us</a>
-                </nav>
+            <nav class="desktop-nav">
+            <!-- Desktop navigation links -->
+                <a href="home.html">Home</a>
+                <a href="search.html">Search</a>
+                <a href="product.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+                <a href="contactus.html">Contact Us</a>
+            </nav>
+        </div>
 
-            </div>
-
-            <!-- Right side of header -->
-            <div class="right-header">
-                <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+        <div class="right-header">
+        <!-- Right side of header -->
+         <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
                     <i class="fa-solid fa-moon"></i>
                     </button>
 
+            <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
+                <i class="fa-solid fa-cart-shopping"></i>
                 <!-- Shopping cart icon -->
-                <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
-                    <i class="fa-solid fa-cart-shopping"></i>
 
-                    <!-- Cart item count -->
-                    <span id="cartCount" class="cart-count">0</span>
-                </a>
+                <span id="cartCount" class="cart-count">0</span>
+                <!-- Shows number of items in cart -->
+            </a>
 
+            <a href="signin.html" class="icon-button" aria-label="User account">
+                <i class="fa-solid fa-user"></i>
                 <!-- User account icon -->
-                <a href="signin.html" class="icon-button">
-                    <i class="fa-solid fa-user"></i>
-                </a>
-
-            </div>
-
+            </a>
         </div>
 
-        <!-- HEADER SEARCH -->
-        <div class="search-bar">
+    </div>
 
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <!-- Search icon -->
+    <div class="search-bar">
+    <!-- Search bar below header -->
 
-            <input type="text" id="headerSearchInput" placeholder="Search">
-            <!-- Search input field -->
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <!-- Search icon -->
 
-            <div id="suggestions"></div>
-            <!-- Search suggestions appear here -->
+        <input type="text" id="headerSearchInput" placeholder="Search">
+        <!-- Search input field -->
 
-        </div>
+        <div id="suggestions"></div>
+        <!-- Search suggestions appear here -->
+    </div>
 
-    </header>
+</header>
 
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
+<!-- ===== SIGN IN FORM ===== -->
+<main class="form-page">
+<!-- Main sign in form section -->
 
-        <!-- SEARCH ACTION -->
-        <div class="search-section">
+    <h2>Sign In</h2>
+    <!-- Page heading -->
 
-            <!-- Main search input box -->
-            <div class="search-box">
+    <label>Enter login ID:</label>
+    <!-- Username label -->
 
-                <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" placeholder="Enter username">
+    <!-- Username input field -->
 
-                <input type="text" id="searchInput" placeholder="Search here">
+    <label>Enter password:</label>
+    <!-- Password label -->
 
-            </div>
+    <input type="password" placeholder="Enter password">
+    <!-- Password input field -->
 
-            <!-- Search action buttons -->
-            <div class="search-icons">
+    <button type="button" class="cart-btn" id="signinButton">
+        Sign In
+    </button>
+    <!-- Button used to sign in -->
 
-                <!-- Filter button -->
-                <button class="icon-btn" id="filterButton" type="button">
-                    <i class="fa-solid fa-sliders"></i>
-                </button>
+</main>
 
-                <!-- Search submit button -->
-                <button class="icon-btn" id="searchButton" type="button">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-
-            </div>
-
-        </div>
-
-        <!-- STATUS -->
-        <div id="searchStatus" class="search-status"></div>
-        <!-- JavaScript can place search messages here -->
-
-        <!-- RESULTS -->
-        <div class="top-searches">
-
-            <h2>Top Searches 🔥</h2>
-
-            <!-- Search results container -->
-            <div id="searchResults">
-
-                <!-- Result card 1 -->
-                <div class="search-card">
-
-                    <div class="card-left">
-
-                        <div class="circle">S</div>
-
-                        <div>
-                            <p class="title">Shirts</p>
-                            <p class="subtitle">Shirts</p>
-                        </div>
-
-                    </div>
-
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQPGMzFK4VgjqffWajYiLxXzu9l-kn9rIgkOLc82OSumAA24He95b5THo&s">
-
-                </div>
-
-                <!-- Result card 2 -->
-                <div class="search-card">
-
-                    <div class="card-left">
-
-                        <div class="circle">P</div>
-
-                        <div>
-                            <p class="title">Pants</p>
-                            <p class="subtitle">Pants</p>
-                        </div>
-
-                    </div>
-
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK3fkDKzTYc4QGXeXxfde7uIeNkWBRrtFm-g&s">
-
-                </div>
-
-                <!-- Result card 3 -->
-                <div class="search-card">
-
-                    <div class="card-left">
-
-                        <div class="circle">S</div>
-
-                        <div>
-                            <p class="title">Shoes</p>
-                            <p class="subtitle">Shoes</p>
-                        </div>
-
-                    </div>
-
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbPJyO8WBUITGNj0tfah_j01vCfL3EtOstbQ&s">
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bottom-footer">
-        <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
-        <p>CAREERS | STORE LOCATOR</p>
-    </footer>
+<!-- FOOTER -->
+<footer class="bottom-footer">
+<!-- Footer section -->
+    <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+    <p>CAREERS | STORE LOCATOR</p>
+</footer>
 
 </div>
 
-<!-- LOADER -->
+<!-- Loading screen shown during sign in or page transitions -->
 <div class="page-loader" id="pageLoader">
 
-    <!-- Spinner animation -->
-    <div class="loader-spinner"></div>
+    <p id="loaderText">Loading...</p>
+    <!-- Loading message -->
 
-    <!-- Loading text -->
-    <p>Loading...</p>
+    <div class="progress-bar-box">
+        <!-- Outer progress bar container -->
+
+        <div class="progress-bar-fill" id="progressBarFill"></div>
+        <!-- Inner filling progress bar -->
+    </div>
 
 </div>
 
-<!-- Connect JavaScript file -->
 <script src="script.js"></script>
+<!-- Connects JavaScript file -->
 
 </body>
 </html>

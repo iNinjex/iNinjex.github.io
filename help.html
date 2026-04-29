@@ -1,28 +1,48 @@
 <!DOCTYPE html>
+<!-- Tells the browser this is an HTML5 document -->
+
 <html lang="en">
+<!-- Starts the HTML page and sets language to English -->
+
 <head>
+<!-- The head section stores page title, settings, and CSS links -->
+
 <meta charset="UTF-8">
+<!-- Allows standard text characters -->
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us</title>
+<!-- Makes the page responsive on phones, tablets, and desktops -->
+
+<title>Help Page</title>
+<!-- Title shown on browser tab -->
 
 <link rel="stylesheet" href="style.css">
+<!-- Main CSS file for page styling -->
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!-- Font Awesome icon library -->
 </head>
 
 <body>
+<!-- Everything visible on the page starts here -->
 
-<!-- ===== SIDEBAR ===== -->
+<!-- Dark overlay behind sidebar when sidebar opens -->
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
+<!-- Sidebar menu used on mobile devices -->
 <aside class="sidebar" id="sidebar">
 
+    <!-- Top area of sidebar with close button -->
     <div class="sidebar-top">
         <button class="close-sidebar" id="closeSidebar">
             <i class="fa-solid fa-xmark"></i>
+            <!-- X icon closes sidebar -->
         </button>
     </div>
 
+    <!-- Sidebar navigation links -->
     <nav class="sidebar-links">
+
         <a href="search.html">
             <span>Search Page</span>
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -55,24 +75,32 @@
         <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
     <span class="theme-toggle-text">Dark Mode</span>
 </button>
-    </nav>
 
+    </nav>
 </aside>
 
-<!-- ===== MAIN SITE ===== -->
+<!-- Wraps the main visible website content -->
 <div class="site-wrapper">
 
+<!-- Header section -->
 <header class="top-header">
 
+    <!-- Row containing left and right header content -->
     <div class="header-row">
 
+        <!-- Left side of header -->
         <div class="left-header">
-            <button class="icon-button mobile-menu-button" id="openSidebar">
+
+            <!-- Mobile menu button -->
+            <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
                 <i class="fa-solid fa-bars"></i>
+                <!-- Hamburger menu icon -->
             </button>
 
+            <!-- Sears logo linking to homepage -->
             <a href="home.html" class="brand-name">SEARS</a>
 
+            <!-- Desktop navigation menu -->
             <nav class="desktop-nav">
                 <a href="home.html">Home</a>
                 <a href="search.html">Search</a>
@@ -81,56 +109,144 @@
                 <a href="help.html">Help</a>
                 <a href="contactus.html">Contact Us</a>
             </nav>
+
         </div>
 
+        <!-- Right side of header -->
         <div class="right-header">
             <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
                     <i class="fa-solid fa-moon"></i>
                     </button>
-                    
-            <a href="cart.html" class="icon-button cart-icon-wrapper">
+
+            <!-- Shopping cart icon -->
+            <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
                 <i class="fa-solid fa-cart-shopping"></i>
-                <span id="cartCount" class="cart-count hidden">0</span>
+
+                <!-- Number of items in cart -->
+                <span id="cartCount" class="cart-count">0</span>
             </a>
 
-            <a href="signin.html" class="icon-button">
+            <!-- User account icon -->
+            <a href="signin.html" class="icon-button" aria-label="User account">
                 <i class="fa-solid fa-user"></i>
             </a>
+
         </div>
-
     </div>
 
+    <!-- Search bar below header -->
     <div class="search-bar">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="headerSearchInput" placeholder="Search">
-        <div id="suggestions"></div>
-    </div>
 
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <!-- Search icon -->
+
+        <input type="text" id="headerSearchInput" placeholder="Search">
+        <!-- Search input box -->
+
+        <div id="suggestions"></div>
+        <!-- Search suggestions appear here -->
+
+    </div>
 </header>
 
-<!-- ===== CONTACT FORM ===== -->
+<!-- Main page content -->
 <main class="main-content">
-    <section class="contact-form-section">
-        <h1>Contact Us</h1>
 
-        <form class="contact-form" id="contactForm">
-            <label for="contactName">Username</label>
-            <input type="text" id="contactName" name="contactName" placeholder="Enter your username">
-            <small id="nameError" class="form-error">Username must be at least 4 characters.</small>
+    <!-- Hero banner section -->
+    <div class="help-hero">
 
-            <label for="contactEmail">Email</label>
-            <input type="email" id="contactEmail" name="contactEmail" placeholder="Enter your email">
-            <small id="emailError" class="form-error">Use a valid email like @gmail.com or @hotmail.com.</small>
+        <!-- Large customer service image -->
+        <img src="images/help.jpg" alt="customer service">
 
-            <label for="contactMessage">Feedback / Message</label>
-            <textarea id="contactMessage" name="contactMessage" rows="6" placeholder="Write your message here"></textarea>
+        <!-- Text shown on top of hero image -->
+        <div class="help-hero-text">
 
-            <button type="submit" class="cart-btn" id="contactSubmitBtn">Send Message</button>
-        </form>
-    </section>
+            <h2>Have a Question?</h2>
+            <!-- Hero heading -->
+
+            <p>Get answers to most customer service questions.</p>
+            <!-- Hero description -->
+
+            <!-- Search button inside hero -->
+            <div class="help-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <button>Search here</button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Help category section -->
+    <div class="help-category">
+
+        <h3>Order Management</h3>
+
+        <p>Check order status</p>
+        <p>Make a Return / Exchange / policy</p>
+        <p>Cancel an Order</p>
+
+        <!-- Button to go to details page -->
+        <a href="help-details.html">
+            <button class="arrow-btn">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </a>
+    </div>
+
+    <!-- Help category section -->
+    <div class="help-category">
+
+        <h3>Pickup, Shipping & Delivery</h3>
+
+        <p>Shipping Methods</p>
+        <p>Installation Services</p>
+        <p>Delivery & Haul-Away</p>
+
+        <a href="help-details.html">
+            <button class="arrow-btn">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </a>
+    </div>
+
+    <!-- Help category section -->
+    <div class="help-category">
+
+        <h3>Payment & Billing</h3>
+
+        <p>Gift Cards</p>
+        <p>Rebates</p>
+        <p>SYW Rewards Points</p>
+
+        <a href="help-details.html">
+            <button class="arrow-btn">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </a>
+    </div>
+
+    <!-- Help category section -->
+    <div class="help-category">
+
+        <h3>Product Recalls</h3>
+
+        <p>Protection Agreements</p>
+        <p>Repair Order Status</p>
+        <p>Warranty Information</p>
+        <p>Find a Manual</p>
+
+        <a href="help-details.html">
+            <button class="arrow-btn">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </a>
+    </div>
+
 </main>
 
-<!-- ===== FOOTER ===== -->
+<!-- Footer section -->
 <footer class="bottom-footer">
     <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
     <p>CAREERS | STORE LOCATOR</p>
@@ -138,12 +254,18 @@
 
 </div>
 
-<!-- ===== LOADER ===== -->
+<!-- Full page loading screen -->
 <div class="page-loader" id="pageLoader">
+
+    <!-- Spinner animation -->
     <div class="loader-spinner"></div>
+
+    <!-- Loading text -->
     <p>Loading...</p>
+
 </div>
 
+<!-- Connects JavaScript file -->
 <script src="script.js"></script>
 
 </body>

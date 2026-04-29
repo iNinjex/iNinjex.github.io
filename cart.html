@@ -1,238 +1,258 @@
 <!DOCTYPE html>
+<!-- Tells the browser this is an HTML5 document -->
+
 <html lang="en">
+<!-- Starts the HTML page and sets the language to English -->
 
 <head>
-    <!-- Basic page setup -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- The head section stores page info, title, and links to CSS files -->
 
-    <!-- Browser tab title -->
-    <title>About Page</title>
+  <meta charset="UTF-8">
+  <!-- Allows the page to use standard text characters -->
 
-    <!-- Main website styling -->
-    <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Makes the page responsive on phones, tablets, and desktops -->
 
-    <!-- Font Awesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <title>Cart</title>
+  <!-- The title shown on the browser tab -->
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Connects your main CSS file to this page -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Connects Font Awesome so you can use icon classes like cart, user, menu, etc. -->
 </head>
 
-<body class="about-page">
+<body>
+<!-- The body contains everything that shows on the page -->
 
-    <!-- Dark overlay shown when mobile sidebar opens -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+<!-- Dark overlay that appears behind the sidebar when it opens -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <!-- Mobile sidebar navigation menu -->
-    <aside class="sidebar" id="sidebar">
+<!-- Sidebar menu for mobile navigation -->
+<aside class="sidebar" id="sidebar">
+    
+    <!-- Top area of the sidebar with the close button -->
+    <div class="sidebar-top">
+        <button class="close-sidebar" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+            <!-- X icon used to close the sidebar -->
+        </button>
+    </div>
 
-        <!-- Sidebar top area with close button -->
-        <div class="sidebar-top">
-            <button class="close-sidebar" id="closeSidebar">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
+    <!-- Navigation links inside the sidebar -->
+    <nav class="sidebar-links">
+        <a href="search.html">
+            <span>Search Page</span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
 
-        <!-- Sidebar links -->
-        <nav class="sidebar-links">
+        <a href="home.html">
+            <span>Home Page</span>
+            <i class="fa-solid fa-house"></i>
+        </a>
 
-            <a href="search.html">
-                <span>Search Page</span>
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
+        <a href="product.html">
+            <span>Product Page</span>
+            <i class="fa-solid fa-box-open"></i>
+        </a>
 
-            <a href="home.html">
-                <span>Home Page</span>
-                <i class="fa-solid fa-house"></i>
-            </a>
+        <a href="about.html">
+            <span>About Page</span>
+            <i class="fa-solid fa-circle-info"></i>
+        </a>
 
-            <a href="product.html">
-                <span>Product Page</span>
-                <i class="fa-solid fa-box-open"></i>
-            </a>
+        <a href="help.html">
+            <span>Help</span>
+            <i class="fa-solid fa-circle-question"></i>
+        </a>
 
-            <a href="about.html">
-                <span>About Page</span>
-                <i class="fa-solid fa-circle-info"></i>
-            </a>
-
-            <a href="help.html">
-                <span>Help</span>
-                <i class="fa-solid fa-circle-question"></i>
-            </a>
-
-            <a href="contactus.html">
-                <span>Contact Us</span>
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-            <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+        <a href="contactus.html">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
     <span class="theme-toggle-text">Dark Mode</span>
 </button>
+    </nav>
+</aside>
 
+<!-- Wraps the whole visible website content -->
+<div class="site-wrapper">
+
+  <!-- Top header section of the page -->
+  <header class="top-header">
+
+    <!-- Row inside the header that holds the left and right sections -->
+    <div class="header-row">
+
+      <!-- Left side of the header -->
+      <div class="left-header">
+
+        <!-- Mobile-only button to open the sidebar -->
+        <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+          <!-- Hamburger menu icon -->
+        </button>
+
+        <!-- Website logo/brand name that links back to the home page -->
+        <a href="home.html" class="brand-name">SEARS</a>
+
+        <!-- Desktop navigation menu -->
+        <nav class="desktop-nav">
+          <a href="home.html">Home</a>
+          <a href="search.html">Search</a>
+          <a href="product.html">Products</a>
+          <a href="about.html">About</a>
+          <a href="help.html">Help</a>
+          <a href="contactus.html">Contact Us</a>
         </nav>
-    </aside>
+      </div>
 
-    <!-- Main site wrapper -->
-    <div class="site-wrapper">
-
-        <!-- Header section -->
-        <header class="top-header">
-
-            <!-- Top row inside header -->
-            <div class="header-row">
-
-                <!-- Left side of header -->
-                <div class="left-header">
-
-                    <!-- Mobile hamburger menu -->
-                    <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-
-                    <!-- Sears logo / home link -->
-                    <a href="home.html" class="brand-name">SEARS</a>
-
-                    <!-- Desktop navigation bar -->
-                    <nav class="desktop-nav">
-                        <a href="home.html">Home</a>
-                        <a href="search.html">Search</a>
-                        <a href="product.html">Products</a>
-                        <a href="about.html">About</a>
-                        <a href="help.html">Help</a>
-                        <a href="contactus.html">Contact Us</a>
-                    </nav>
-                </div>
-
-                <!-- Right side icons -->
-                <div class="right-header">
-                    <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+      <!-- Right side of the header -->
+      <div class="right-header">
+        <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
                     <i class="fa-solid fa-moon"></i>
                     </button>
-                    
-                    <!-- Shopping cart icon -->
-                    <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <span id="cartCount" class="cart-count">0</span>
-                    </a>
+      
+        <!-- Cart icon that links to the cart page -->
+        <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <!-- Shopping cart icon -->
 
-                    <!-- User sign in icon -->
-                    <a href="signin.html" class="icon-button" aria-label="User account">
-                        <i class="fa-solid fa-user"></i>
-                    </a>
+          <span id="cartCount" class="cart-count hidden">0</span>
+          <!-- Cart item count bubble, hidden until items are added -->
+        </a>
 
-                </div>
-
-            </div>
-
-            <!-- Header search bar -->
-            <div class="search-bar">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="headerSearchInput" placeholder="Search">
-                <div id="suggestions"></div>
-            </div>
-
-        </header>
-
-        <!-- Main About Page Content -->
-        <main class="main-content">
-
-            <div class="form-page">
-
-                <div class="top-text">
-
-                    <!-- Intro heading -->
-                    <h2>SEARS</h2>
-
-                    <!-- Intro text -->
-                    <p>
-                        A pioneer brand that reshaped the retail landscape.
-                    </p>
-
-                    <p>
-                        How did a simple watch company grow into America's favorite store in the 20th century?
-                        Let's get into the retail time machine and journey together to the past.
-                    </p>
-
-                    <!-- Timeline Item 1 -->
-                    <div class="timeline-item">
-                        <img src="images/sears1.jpg" alt="sears1">
-
-                        <div class="timeline-text">
-                            <p class="year">1886</p>
-                            <p>The company was founded by Richard Warren Sears in the year 1886.</p>
-                        </div>
-                    </div>
-
-                    <!-- Timeline Item 2 -->
-                    <div class="timeline-item">
-                        <img src="images/sears2.jpg" alt="sears2">
-
-                        <div class="timeline-text">
-                            <p class="year">1908</p>
-                            <p>Sears began selling entire home kits through mail-order catalogs.</p>
-                        </div>
-                    </div>
-
-                    <!-- Timeline Item 3 -->
-                    <div class="timeline-item">
-                        <img src="images/sears3.jpg" alt="sears3">
-
-                        <div class="timeline-text">
-                            <p class="year">1925</p>
-                            <p>Sears opened its first retail store on Chicago's west side.</p>
-                        </div>
-                    </div>
-
-                    <!-- Button to reveal more history -->
-                    <button class="load-more">Load more details</button>
-
-                    <!-- Hidden extra history content -->
-                    <div class="extra-detail" style="display: none;">
-
-                        <img src="images/sears4.jpg" alt="sears4">
-
-                        <div class="timeline-item">
-                            <div class="timeline-text">
-                                <p class="year">1974</p>
-                                <p>
-                                    As a towering symbol of retail dominance,
-                                    Sears unveiled the Sears Tower.
-                                    It was world’s tallest building for 22 years.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- FAQ section -->
-                    <div class="faq-list">
-                        <h1>FAQs</h1>
-                        <p>Customer Service</p>
-                        <p>Your Account</p>
-                        <p>Get To Know Us</p>
-                        <p>Shipping & Returns</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </main>
-
-        <!-- Footer section -->
-        <footer class="bottom-footer">
-            <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
-            <p>CAREERS | STORE LOCATOR</p>
-        </footer>
+        <!-- User account/sign-in icon -->
+        <a href="signin.html" class="icon-button" aria-label="User account">
+          <i class="fa-solid fa-user"></i>
+          <!-- User profile icon -->
+        </a>
+      </div>
 
     </div>
 
-    <!-- Loading screen -->
-    <div class="page-loader" id="pageLoader">
-        <div class="loader-spinner"></div>
-        <p>Loading...</p>
+    <!-- Search bar section below the main header row -->
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <!-- Search icon -->
+
+      <input type="text" id="headerSearchInput" placeholder="Search">
+      <!-- Search input field where the user types -->
+
+      <div id="suggestions"></div>
+      <!-- Area where JavaScript can show search suggestions -->
     </div>
 
-    <!-- JavaScript file -->
-    <script src="script.js"></script>
+  </header>
 
+  <!-- Main page content for the cart page -->
+  <main class="main-content cart-page">
+
+    <!-- Main heading of the cart page -->
+    <h2 class="cart-title">Your Cart</h2>
+
+    <!-- Main cart layout with left and right sections -->
+    <div class="cart-layout">
+
+      <!-- Left side of the cart, where cart items are shown -->
+      <div class="cart-left">
+
+        <!-- Button to go back to the product page -->
+        <a href="product.html" class="cart-btn">← Back to Product</a>
+
+        <!-- One cart item block -->
+        <div class="cart-item">
+
+          <!-- Product image -->
+          <img src="images/dress.jpg" alt="dress" class="cart-item-image">
+
+          <!-- Product details -->
+          <div class="cart-item-info">
+            <h3>Black Dress</h3>
+            <!-- Product name -->
+
+            <p class="seller-text">Unique Bargains - a Sears Marketplace seller</p>
+            <!-- Seller information -->
+
+            <p class="qty-text">Qty: 1</p>
+            <!-- Quantity of the item -->
+
+            <p class="item-price">Dress - $49.99</p>
+            <!-- Product price -->
+
+            <p class="shipping-text">Tax, Shipping & Delivery - $17.00</p>
+            <!-- Extra cost details -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side of the cart, where the order summary is shown -->
+      <div class="cart-right">
+
+        <!-- Order summary box -->
+        <div class="summary-box">
+          <h3>Order Summary (1 item)</h3>
+
+          <!-- Row showing merchandise subtotal -->
+          <div class="summary-row">
+            <span>Merchandise Subtotal</span>
+            <span>$128.00</span>
+          </div>
+
+          <!-- Row showing tax and shipping -->
+          <div class="summary-row">
+            <span>Tax, Shipping & Delivery</span>
+            <span>$17.00</span>
+          </div>
+
+          <!-- Total row with final estimated total and checkout details -->
+          <div class="summary-row total-row">
+            <span>Estimated Total</span>
+            <span>$145.00</span>
+
+            <h4>Card Infomation</h4>
+            <!-- Section title for card info -->
+
+            <p>card Number: 7382 8473 2949</p>
+            <!-- Example card number shown on the page -->
+
+            <p>Pin:3939</p>
+            <!-- Example pin shown on the page -->
+
+            <!-- Button that sends the user to the order confirmation page -->
+            <button class="cart-btn" onclick="window.location.href='order-confirmation.html'">
+              Place Order
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer section at the bottom of the page -->
+  <footer class="bottom-footer">
+    <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+    <p>CAREERS | STORE LOCATOR</p>
+  </footer>
+
+</div>
+
+<!-- Full-page loading screen shown during page transitions -->
+<div class="page-loader" id="pageLoader">
+  <div class="loader-spinner"></div>
+  <!-- Spinner animation -->
+
+  <p>Loading...</p>
+  <!-- Loading text -->
+</div>
+
+<script src="script.js"></script>
+<!-- Connects your JavaScript file to this page -->
 </body>
 </html>

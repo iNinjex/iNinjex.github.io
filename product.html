@@ -2,48 +2,48 @@
 <!-- Tells the browser this is an HTML5 document -->
 
 <html lang="en">
-<!-- Starts the HTML page and sets language to English -->
+<!-- Starts the HTML document and sets the page language to English -->
 
 <head>
-    <!-- Head section stores page title, settings, and CSS links -->
+<!-- The head section contains page information, title, and linked files -->
 
-    <meta charset="UTF-8">
-    <!-- Supports standard text characters -->
+<meta charset="UTF-8">
+<!-- Allows the page to use standard text characters -->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Makes the page responsive on mobile, tablet, and desktop -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Makes the page responsive on phones, tablets, and desktops -->
 
-    <title>Sears Responsive Layout</title>
-    <!-- Browser tab title -->
+<title>Product Page</title>
+<!-- The title shown on the browser tab -->
 
-    <link rel="stylesheet" href="style.css">
-    <!-- Main CSS styling file -->
+<link rel="stylesheet" href="style.css">
+<!-- Links your main CSS file -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Font Awesome icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!-- Links Font Awesome so icons can be used on the page -->
 </head>
 
-<body>
-<!-- Everything visible on the page starts here -->
+<body class="product-page">
+<!-- The body contains everything visible on the page -->
+<!-- The class "product-page" can be used for page-specific styling -->
 
 <!-- ===== SIDEBAR ===== -->
-<!-- Dark overlay shown when sidebar opens -->
+<!-- Dark overlay that appears behind the sidebar when it opens -->
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-<!-- Sidebar menu used mostly for mobile navigation -->
+<!-- Sidebar menu used mainly for mobile navigation -->
 <aside class="sidebar" id="sidebar">
 
-    <!-- Top area with close button -->
+    <!-- Top part of the sidebar with the close button -->
     <div class="sidebar-top">
         <button class="close-sidebar" id="closeSidebar">
             <i class="fa-solid fa-xmark"></i>
-            <!-- X icon closes sidebar -->
+            <!-- X icon used to close the sidebar -->
         </button>
     </div>
 
     <!-- Sidebar navigation links -->
     <nav class="sidebar-links">
-
         <a href="search.html">
             <span>Search Page</span>
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -76,216 +76,170 @@
         <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
     <span class="theme-toggle-text">Dark Mode</span>
 </button>
-
     </nav>
 </aside>
 
 <!-- ===== MAIN SITE ===== -->
-<!-- Wraps the main visible website -->
+<!-- Wraps the full visible website content -->
 <div class="site-wrapper">
 
-    <!-- Header section -->
-    <header class="top-header">
+<header class="top-header">
+<!-- Main header at the top of the page -->
 
-        <!-- Row holding left and right header content -->
-        <div class="header-row">
+    <div class="header-row">
+    <!-- Holds the left and right parts of the header -->
 
-            <!-- Left side of header -->
-            <div class="left-header">
+        <div class="left-header">
+        <!-- Left side of the header -->
 
-                <!-- Mobile menu button -->
-                <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
-                    <i class="fa-solid fa-bars"></i>
-                    <!-- Hamburger icon -->
-                </button>
+            <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+                <!-- Hamburger menu icon for opening sidebar -->
+            </button>
 
-                <!-- Sears logo -->
-                <a href="home.html" class="brand-name">SEARS</a>
+            <a href="home.html" class="brand-name">SEARS</a>
+            <!-- Website logo/brand name that links to home page -->
 
-                <!-- Desktop navigation menu -->
-                <nav class="desktop-nav">
-                    <a href="home.html">Home</a>
-                    <a href="search.html">Search</a>
-                    <a href="product.html">Products</a>
-                    <a href="about.html">About</a>
-                    <a href="help.html">Help</a>
-                    <a href="contactus.html">Contact Us</a>
-                </nav>
-            </div>
+            <nav class="desktop-nav">
+            <!-- Navigation links shown on desktop -->
+                <a href="home.html">Home</a>
+                <a href="search.html">Search</a>
+                <a href="product.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+                <a href="contactus.html">Contact Us</a>
+            </nav>
+        </div>
 
-            <!-- Right side of header -->
-            <div class="right-header">
-                <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+        <div class="right-header">
+        <!-- Right side of the header -->
+         <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
                     <i class="fa-solid fa-moon"></i>
                     </button>
 
+            <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
+                <i class="fa-solid fa-cart-shopping"></i>
                 <!-- Shopping cart icon -->
-                <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
-                    <i class="fa-solid fa-cart-shopping"></i>
 
-                    <!-- Shows cart item count -->
-                    <span id="cartCount" class="cart-count">0</span>
-                </a>
+                <span id="cartCount" class="cart-count hidden">0</span>
+                <!-- Cart item count, hidden until items are added -->
+            </a>
 
+            <a href="signin.html" class="icon-button" aria-label="User account">
+                <i class="fa-solid fa-user"></i>
                 <!-- User account icon -->
-                <a href="signin.html" class="icon-button" aria-label="User account">
-                    <i class="fa-solid fa-user"></i>
-                </a>
-
-            </div>
-
+            </a>
         </div>
 
-        <!-- Search bar below header -->
-        <div class="search-bar">
+    </div>
 
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <!-- Search icon -->
+    <div class="search-bar">
+    <!-- Search bar section below the header row -->
 
-            <input type="text" id="headerSearchInput" placeholder="Search">
-            <!-- Search input field -->
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <!-- Search icon -->
 
-            <div id="suggestions"></div>
-            <!-- Search suggestions appear here -->
+        <input type="text" id="headerSearchInput" placeholder="Search">
+        <!-- Input where the user types a search -->
 
+        <div id="suggestions"></div>
+        <!-- Area where search suggestions can appear -->
+    </div>
+
+</header>
+
+<!-- ===== YOUR PRODUCT SECTION ===== -->
+<main class="product">
+<!-- Main section that displays product cards -->
+
+    <!-- CARD 1 -->
+    <!-- First product card -->
+    <div class="card">
+
+        <img src="images/dress.jpg" alt="dress">
+        <!-- Product image -->
+
+        <div>
+            <!-- Product information -->
+            <h2>Unomatch Women's Spring & Summer Casual Slim A-Line Midi Dress With Pockets – Round Neck</h2>
+            <p>Price: $27.17</p>
+            <p>Sizes: XXS XS S M L XL XXL</p>
+            <p>Pickup: Available today</p>
+            <p>Shipping: Free 2-day shipping</p>
         </div>
 
-    </header>
+        <div>
+            <!-- Add to cart button area -->
+            <button class="cart-btn add-cart-btn">Add to Cart</button>
+        </div>
+    </div>
 
-    <!-- Main page content -->
-    <main class="main-content">
+    <!-- CARD 2 -->
+    <!-- Second product card -->
+    <div class="card">
 
-        <!-- Category buttons section -->
-        <section class="category-buttons">
+        <img src="images/dress2.jpg" alt="dress 2">
+        <!-- Product image -->
 
-            <a href="appliances.html">
-                <button>Appliances</button>
-            </a>
+        <div>
+            <!-- Product information -->
+            <h2>Unomatch Women's Spring & Summer Casual Slim A-Line Midi Dress With Pockets – Round Neck</h2>
+            <p>Price: $27.17</p>
+            <p>Sizes: XXS XS S M L XL XXL</p>
+            <p>Pickup: Available today</p>
+            <p>Shipping: Free 2-day shipping</p>
+        </div>
 
-            <a href="tools.html">
-                <button>Tools</button>
-            </a>
+        <div>
+            <!-- Add to cart button area -->
+            <button class="cart-btn add-cart-btn">Add to Cart</button>
+        </div>
+    </div>
 
-            <a href="clothing.html">
-                <button>Clothing</button>
-            </a>
+    <!-- CARD 3 -->
+    <!-- Third product card -->
+    <div class="card">
 
-            <a href="deals.html">
-                <button>Deals</button>
-            </a>
+        <img src="images/dress3.jpg" alt="dress 3">
+        <!-- Product image -->
 
-        </section>
+        <div>
+            <!-- Product information -->
+            <h2>Unique Bargains Women's Elegant Boat Neck 3/4 Sleeves Wear To Work Midi Split Sheath Casual Dress</h2>
+            <p>Price: $49.99</p>
+            <p>Sizes: XXS XS S M L XL XXL</p>
+            <p>Pickup: Available today</p>
+            <p>Shipping: Free 2-day shipping</p>
+        </div>
 
-        <!-- Promo section -->
-        <section class="promo-section">
+        <div>
+            <!-- Add to cart button area -->
+            <button class="cart-btn add-cart-btn">Add to Cart</button>
+        </div>
+    </div>
 
-            <h2>PROMO</h2>
+</main>
 
-            <!-- Row for promo image carousel -->
-            <div class="carousel-row">
-
-                <!-- Previous promo button -->
-                <button class="arrow-button" id="promoPrev">
-                    <i class="fa-solid fa-circle-arrow-left"></i>
-                </button>
-
-                <!-- Promo images -->
-                <div class="promo-display">
-                    <img id="promoLeftImage" src="images/promo-tools.jpg" alt="Promo left image">
-                    <img id="promoRightImage" src="images/promo-sale.jpg" alt="Promo right image">
-                </div>
-
-                <!-- Next promo button -->
-                <button class="arrow-button" id="promoNext">
-                    <i class="fa-solid fa-circle-arrow-right"></i>
-                </button>
-
-            </div>
-
-            <!-- Dots showing current promo slide -->
-            <div class="dots" id="promoDots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-
-        </section>
-
-        <!-- Popular section -->
-        <section class="popular-section">
-
-            <h2>POPULAR</h2>
-
-            <!-- Row for popular item carousel -->
-            <div class="carousel-row">
-
-                <!-- Previous popular button -->
-                <button class="arrow-button" id="popularPrev">
-                    <i class="fa-solid fa-circle-arrow-left"></i>
-                </button>
-
-                <!-- Popular cards -->
-                <div class="popular-cards">
-
-                    <!-- Card 1 -->
-                    <div class="card">
-                        <img id="popularImage1" src="images/fashion.jpg" alt="Fashion">
-                        <div class="card-label" id="popularLabel1">Fashion</div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="card">
-                        <img id="popularImage2" src="images/tools.jpg" alt="Tools">
-                        <div class="card-label" id="popularLabel2">Tools</div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="card">
-                        <img id="popularImage3" src="images/outdoor.jpg" alt="Outdoor">
-                        <div class="card-label" id="popularLabel3">outdoor</div>
-                    </div>
-
-                </div>
-
-                <!-- Next popular button -->
-                <button class="arrow-button" id="popularNext">
-                    <i class="fa-solid fa-circle-arrow-right"></i>
-                </button>
-
-            </div>
-
-            <!-- Dots showing current popular slide -->
-            <div class="dots" id="popularDots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- Footer section -->
-    <footer class="bottom-footer">
-        <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
-        <p>CAREERS | STORE LOCATOR</p>
-    </footer>
+<!-- FOOTER -->
+<footer class="bottom-footer">
+<!-- Footer section at the bottom of the page -->
+    <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+    <p>CAREERS | STORE LOCATOR</p>
+</footer>
 
 </div>
 
 <!-- Loading screen shown during page transitions -->
 <div class="page-loader" id="pageLoader">
-
-    <!-- Spinner animation -->
     <div class="loader-spinner"></div>
+    <!-- Spinner animation -->
 
-    <!-- Loading text -->
     <p>Loading...</p>
-
+    <!-- Loading text -->
 </div>
 
-<!-- Connects JavaScript file -->
 <script src="script.js"></script>
+<!-- Links your JavaScript file -->
 
 </body>
 </html>

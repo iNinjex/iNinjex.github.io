@@ -5,34 +5,35 @@
 <!-- Starts the HTML page and sets language to English -->
 
 <head>
-<!-- The head section stores page title, settings, and CSS links -->
+    <!-- Head section stores page title, settings, and CSS links -->
 
-<meta charset="UTF-8">
-<!-- Allows standard text characters -->
+    <meta charset="UTF-8">
+    <!-- Supports standard text characters -->
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Makes the page responsive on phones, tablets, and desktops -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the page responsive on mobile, tablet, and desktop -->
 
-<title>Help Page</title>
-<!-- Title shown on browser tab -->
+    <title>Sears Responsive Layout</title>
+    <!-- Browser tab title -->
 
-<link rel="stylesheet" href="style.css">
-<!-- Main CSS file for page styling -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Main CSS styling file -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<!-- Font Awesome icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Font Awesome icon library -->
 </head>
 
 <body>
 <!-- Everything visible on the page starts here -->
 
-<!-- Dark overlay behind sidebar when sidebar opens -->
+<!-- ===== SIDEBAR ===== -->
+<!-- Dark overlay shown when sidebar opens -->
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-<!-- Sidebar menu used on mobile devices -->
+<!-- Sidebar menu used mostly for mobile navigation -->
 <aside class="sidebar" id="sidebar">
 
-    <!-- Top area of sidebar with close button -->
+    <!-- Top area with close button -->
     <div class="sidebar-top">
         <button class="close-sidebar" id="closeSidebar">
             <i class="fa-solid fa-xmark"></i>
@@ -79,182 +80,200 @@
     </nav>
 </aside>
 
-<!-- Wraps the main visible website content -->
+<!-- ===== MAIN SITE ===== -->
+<!-- Wraps the main visible website -->
 <div class="site-wrapper">
 
-<!-- Header section -->
-<header class="top-header">
+    <!-- Header section -->
+    <header class="top-header">
 
-    <!-- Row containing left and right header content -->
-    <div class="header-row">
+        <!-- Row holding left and right header content -->
+        <div class="header-row">
 
-        <!-- Left side of header -->
-        <div class="left-header">
+            <!-- Left side of header -->
+            <div class="left-header">
 
-            <!-- Mobile menu button -->
-            <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
-                <i class="fa-solid fa-bars"></i>
-                <!-- Hamburger menu icon -->
-            </button>
+                <!-- Mobile menu button -->
+                <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                    <!-- Hamburger icon -->
+                </button>
 
-            <!-- Sears logo linking to homepage -->
-            <a href="home.html" class="brand-name">SEARS</a>
+                <!-- Sears logo -->
+                <a href="home.html" class="brand-name">SEARS</a>
 
-            <!-- Desktop navigation menu -->
-            <nav class="desktop-nav">
-                <a href="home.html">Home</a>
-                <a href="search.html">Search</a>
-                <a href="product.html">Products</a>
-                <a href="about.html">About</a>
-                <a href="help.html">Help</a>
-                <a href="contactus.html">Contact Us</a>
-            </nav>
+                <!-- Desktop navigation menu -->
+                <nav class="desktop-nav">
+                    <a href="home.html">Home</a>
+                    <a href="search.html">Search</a>
+                    <a href="product.html">Products</a>
+                    <a href="about.html">About</a>
+                    <a href="help.html">Help</a>
+                    <a href="contactus.html">Contact Us</a>
+                </nav>
+            </div>
 
-        </div>
-
-        <!-- Right side of header -->
-        <div class="right-header">
-            <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+            <!-- Right side of header -->
+            <div class="right-header">
+                <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
                     <i class="fa-solid fa-moon"></i>
                     </button>
 
-            <!-- Shopping cart icon -->
-            <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
-                <i class="fa-solid fa-cart-shopping"></i>
+                <!-- Shopping cart icon -->
+                <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
 
-                <!-- Number of items in cart -->
-                <span id="cartCount" class="cart-count">0</span>
-            </a>
+                    <!-- Shows cart item count -->
+                    <span id="cartCount" class="cart-count">0</span>
+                </a>
 
-            <!-- User account icon -->
-            <a href="signin.html" class="icon-button" aria-label="User account">
-                <i class="fa-solid fa-user"></i>
-            </a>
-
-        </div>
-    </div>
-
-    <!-- Search bar below header -->
-    <div class="search-bar">
-
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <!-- Search icon -->
-
-        <input type="text" id="headerSearchInput" placeholder="Search">
-        <!-- Search input box -->
-
-        <div id="suggestions"></div>
-        <!-- Search suggestions appear here -->
-
-    </div>
-</header>
-
-<!-- Main page content -->
-<main class="main-content">
-
-    <!-- Hero banner section -->
-    <div class="help-hero">
-
-        <!-- Large customer service image -->
-        <img src="images/help.jpg" alt="customer service">
-
-        <!-- Text shown on top of hero image -->
-        <div class="help-hero-text">
-
-            <h2>Have a Question?</h2>
-            <!-- Hero heading -->
-
-            <p>Get answers to most customer service questions.</p>
-            <!-- Hero description -->
-
-            <!-- Search button inside hero -->
-            <div class="help-search">
-
-                <i class="fa-solid fa-magnifying-glass"></i>
-
-                <button>Search here</button>
+                <!-- User account icon -->
+                <a href="signin.html" class="icon-button" aria-label="User account">
+                    <i class="fa-solid fa-user"></i>
+                </a>
 
             </div>
+
         </div>
-    </div>
 
-    <!-- Help category section -->
-    <div class="help-category">
+        <!-- Search bar below header -->
+        <div class="search-bar">
 
-        <h3>Order Management</h3>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <!-- Search icon -->
 
-        <p>Check order status</p>
-        <p>Make a Return / Exchange / policy</p>
-        <p>Cancel an Order</p>
+            <input type="text" id="headerSearchInput" placeholder="Search">
+            <!-- Search input field -->
 
-        <!-- Button to go to details page -->
-        <a href="help-details.html">
-            <button class="arrow-btn">
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
-        </a>
-    </div>
+            <div id="suggestions"></div>
+            <!-- Search suggestions appear here -->
 
-    <!-- Help category section -->
-    <div class="help-category">
+        </div>
 
-        <h3>Pickup, Shipping & Delivery</h3>
+    </header>
 
-        <p>Shipping Methods</p>
-        <p>Installation Services</p>
-        <p>Delivery & Haul-Away</p>
+    <!-- Main page content -->
+    <main class="main-content">
 
-        <a href="help-details.html">
-            <button class="arrow-btn">
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
-        </a>
-    </div>
+        <!-- Category buttons section -->
+        <section class="category-buttons">
 
-    <!-- Help category section -->
-    <div class="help-category">
+            <a href="appliances.html">
+                <button>Appliances</button>
+            </a>
 
-        <h3>Payment & Billing</h3>
+            <a href="tools.html">
+                <button>Tools</button>
+            </a>
 
-        <p>Gift Cards</p>
-        <p>Rebates</p>
-        <p>SYW Rewards Points</p>
+            <a href="clothing.html">
+                <button>Clothing</button>
+            </a>
 
-        <a href="help-details.html">
-            <button class="arrow-btn">
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
-        </a>
-    </div>
+            <a href="deals.html">
+                <button>Deals</button>
+            </a>
 
-    <!-- Help category section -->
-    <div class="help-category">
+        </section>
 
-        <h3>Product Recalls</h3>
+        <!-- Promo section -->
+        <section class="promo-section">
 
-        <p>Protection Agreements</p>
-        <p>Repair Order Status</p>
-        <p>Warranty Information</p>
-        <p>Find a Manual</p>
+            <h2>PROMO</h2>
 
-        <a href="help-details.html">
-            <button class="arrow-btn">
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
-        </a>
-    </div>
+            <!-- Row for promo image carousel -->
+            <div class="carousel-row">
 
-</main>
+                <!-- Previous promo button -->
+                <button class="arrow-button" id="promoPrev">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                </button>
 
-<!-- Footer section -->
-<footer class="bottom-footer">
-    <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
-    <p>CAREERS | STORE LOCATOR</p>
-</footer>
+                <!-- Promo images -->
+                <div class="promo-display">
+                    <img id="promoLeftImage" src="images/promo-tools.jpg" alt="Promo left image">
+                    <img id="promoRightImage" src="images/promo-sale.jpg" alt="Promo right image">
+                </div>
+
+                <!-- Next promo button -->
+                <button class="arrow-button" id="promoNext">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                </button>
+
+            </div>
+
+            <!-- Dots showing current promo slide -->
+            <div class="dots" id="promoDots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+        </section>
+
+        <!-- Popular section -->
+        <section class="popular-section">
+
+            <h2>POPULAR</h2>
+
+            <!-- Row for popular item carousel -->
+            <div class="carousel-row">
+
+                <!-- Previous popular button -->
+                <button class="arrow-button" id="popularPrev">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                </button>
+
+                <!-- Popular cards -->
+                <div class="popular-cards">
+
+                    <!-- Card 1 -->
+                    <div class="card">
+                        <img id="popularImage1" src="images/fashion.jpg" alt="Fashion">
+                        <div class="card-label" id="popularLabel1">Fashion</div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card">
+                        <img id="popularImage2" src="images/tools.jpg" alt="Tools">
+                        <div class="card-label" id="popularLabel2">Tools</div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card">
+                        <img id="popularImage3" src="images/outdoor.jpg" alt="Outdoor">
+                        <div class="card-label" id="popularLabel3">outdoor</div>
+                    </div>
+
+                </div>
+
+                <!-- Next popular button -->
+                <button class="arrow-button" id="popularNext">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                </button>
+
+            </div>
+
+            <!-- Dots showing current popular slide -->
+            <div class="dots" id="popularDots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer section -->
+    <footer class="bottom-footer">
+        <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+        <p>CAREERS | STORE LOCATOR</p>
+    </footer>
 
 </div>
 
-<!-- Full page loading screen -->
+<!-- Loading screen shown during page transitions -->
 <div class="page-loader" id="pageLoader">
 
     <!-- Spinner animation -->

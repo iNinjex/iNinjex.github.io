@@ -2,50 +2,49 @@
 <!-- Tells the browser this is an HTML5 document -->
 
 <html lang="en">
-<!-- Starts the HTML page and sets language to English -->
+<!-- Starts the HTML document and sets the page language to English -->
 
 <head>
-    <!-- Head section stores page title, links, and settings -->
+    <!-- The head section holds page info, title, and linked CSS files -->
 
     <meta charset="UTF-8">
-    <!-- Supports standard text characters -->
+    <!-- Lets the page use standard text characters -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Makes page responsive for mobile and desktop -->
+    <!-- Makes the page responsive on mobile, tablet, and desktop -->
 
-    <title>Clothing</title>
-    <!-- Title shown on browser tab -->
+    <title>Deals</title>
+    <!-- Title shown on the browser tab -->
 
     <link rel="stylesheet" href="style.css">
-    <!-- Main website CSS file -->
+    <!-- Links the main CSS file for general website styling -->
 
     <link rel="stylesheet" href="appliances.css">
-    <!-- Extra CSS file for this product/category page -->
+    <!-- Links the extra CSS file used for this category-style page -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Font Awesome icons library -->
+    <!-- Links Font Awesome so icons can be used -->
 </head>
 
 <body>
-<!-- Everything visible on page starts here -->
+<!-- The body contains everything visible on the webpage -->
 
-<!-- Dark overlay behind sidebar when opened -->
+<!-- Dark overlay shown behind the sidebar when the sidebar opens -->
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-<!-- Sidebar menu for mobile navigation -->
+<!-- Sidebar navigation menu -->
 <aside class="sidebar" id="sidebar">
 
-    <!-- Top area with close button -->
+    <!-- Top section of the sidebar with the close button -->
     <div class="sidebar-top">
         <button class="close-sidebar" id="closeSidebar">
             <i class="fa-solid fa-xmark"></i>
-            <!-- X icon -->
+            <!-- X icon used to close the sidebar -->
         </button>
     </div>
 
-    <!-- Sidebar navigation links -->
+    <!-- Sidebar links for moving to other pages -->
     <nav class="sidebar-links">
-
         <a href="search.html">
             <span>Search Page</span>
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -78,28 +77,28 @@
         <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
     <span class="theme-toggle-text">Dark Mode</span>
 </button>
-
     </nav>
 </aside>
 
-<!-- Wraps the entire website content -->
+<!-- Wraps all the main visible page content -->
 <div class="site-wrapper">
 
     <!-- Top header section -->
     <header class="top-header">
 
-        <!-- Row containing left and right header content -->
+        <!-- Row that holds left and right parts of the header -->
         <div class="header-row">
 
             <!-- Left side of header -->
             <div class="left-header">
 
-                <!-- Mobile hamburger menu button -->
+                <!-- Mobile menu button that opens the sidebar -->
                 <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
                     <i class="fa-solid fa-bars"></i>
+                    <!-- Hamburger menu icon -->
                 </button>
 
-                <!-- Website logo -->
+                <!-- Brand logo/name linking back to home page -->
                 <a href="home.html" class="brand-name">SEARS</a>
 
                 <!-- Desktop navigation menu -->
@@ -111,7 +110,6 @@
                     <a href="help.html">Help</a>
                     <a href="contactus.html">Contact Us</a>
                 </nav>
-
             </div>
 
             <!-- Right side of header -->
@@ -120,72 +118,71 @@
                     <i class="fa-solid fa-moon"></i>
                     </button>
 
-                <!-- Shopping cart icon -->
+                <!-- Cart icon that links to the cart page -->
                 <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
                     <i class="fa-solid fa-cart-shopping"></i>
+                    <!-- Shopping cart icon -->
 
-                    <!-- Number of items in cart -->
                     <span id="cartCount" class="cart-count">0</span>
+                    <!-- Shows the current number of cart items -->
                 </a>
 
-                <!-- User account icon -->
+                <!-- User account icon linking to sign-in page -->
                 <a href="signin.html" class="icon-button" aria-label="User account">
                     <i class="fa-solid fa-user"></i>
+                    <!-- User profile icon -->
                 </a>
-
             </div>
 
         </div>
 
-        <!-- Search bar under header -->
+        <!-- Search bar under the main header row -->
         <div class="search-bar">
-
-            <!-- Search icon -->
             <i class="fa-solid fa-magnifying-glass"></i>
+            <!-- Search icon -->
 
-            <!-- Search input box -->
             <input type="text" id="headerSearchInput" placeholder="Search products">
+            <!-- Search box where the user types -->
 
-            <!-- Search suggestions area -->
             <div id="suggestions"></div>
-
+            <!-- Area where search suggestions can appear -->
         </div>
 
     </header>
 
-    <!-- Main page content -->
+    <!-- Main content of the page -->
     <main class="main-content">
 
-        <!-- Clothing page section -->
+        <!-- Deals page section -->
         <section class="appliances-page">
 
-            <!-- Main page title -->
-            <h2 class="page-title">Clothing</h2>
+            <!-- Main heading for the page -->
+            <h2 class="page-title">Deals</h2>
 
             <!-- Large promotional banner image -->
             <div class="promo-banner">
-                <img src="images/clothing.jpg" alt="30% off clothing">
+                <img src="images/deals.jpg" alt="30% off deals">
             </div>
 
-            <!-- Product category cards grid -->
+            <!-- Grid that holds the deal cards -->
             <div class="appliance-grid">
 
-                <!-- Women's clothing card -->
+                <!-- First deal card -->
                 <div class="appliance-card">
-                    <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03" alt="Long Dress">
-                    <h3>Women</h3>
+                    <img src="images/refrigerators.jpg" alt="Deals">
+                    <h3>Buy 1 Get 1 Free Refrigerators</h3>
                 </div>
 
-                <!-- Men's clothing card -->
+                <!-- Second deal card -->
                 <div class="appliance-card">
-                    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" alt="Leather Jacket">
-                    <h3>Men</h3>
+                    <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1" alt="Washer Deal">
+                    <h3>20% Off Washers & Dryers</h3>
                 </div>
 
-                <!-- Kids clothing card -->
+                <!-- Third deal card -->
                 <div class="appliance-card">
-                    <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8" alt="Kids Frock">
-                    <h3>Kids</h3>
+                    <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f" alt="Clothing Sale">
+                    <h3>Up to 50% Off Clothing</h3>
                 </div>
 
             </div>
@@ -194,7 +191,7 @@
 
     </main>
 
-    <!-- Footer section -->
+    <!-- Footer at the bottom of the page -->
     <footer class="bottom-footer">
         <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
         <p>CAREERS | STORE LOCATOR</p>
@@ -202,18 +199,17 @@
 
 </div>
 
-<!-- Loading screen shown during page changes -->
+<!-- Full-page loading screen -->
 <div class="page-loader" id="pageLoader">
 
-    <!-- Spinner animation -->
+    <!-- Loading spinner animation -->
     <div class="loader-spinner"></div>
 
     <!-- Loading text -->
     <p>Loading...</p>
-
 </div>
 
-<!-- Connects JavaScript file -->
+<!-- Connects the JavaScript file -->
 <script src="script.js"></script>
 
 </body>
