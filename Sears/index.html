@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!-- Tells the browser this is an HTML5 document -->
+
+<html lang="en">
+<!-- Starts the HTML page and sets language to English -->
+
+<head>
+    <!-- Head section stores page title, settings, and CSS links -->
+
+    <meta charset="UTF-8">
+    <!-- Supports standard text characters -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the page responsive on mobile, tablet, and desktop -->
+
+    <title>Sears Responsive Layout</title>
+    <!-- Browser tab title -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Main CSS styling file -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Font Awesome icon library -->
+</head>
+
+<body>
+<!-- Everything visible on the page starts here -->
+
+<!-- ===== SIDEBAR ===== -->
+<!-- Dark overlay shown when sidebar opens -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Sidebar menu used mostly for mobile navigation -->
+<aside class="sidebar" id="sidebar">
+
+    <!-- Top area with close button -->
+    <div class="sidebar-top">
+        <button class="close-sidebar" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+            <!-- X icon closes sidebar -->
+        </button>
+    </div>
+
+    <!-- Sidebar navigation links -->
+    <nav class="sidebar-links">
+
+        <a href="search.html">
+            <span>Search Page</span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="index.html">
+            <span>Home Page</span>
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="product.html">
+            <span>Product Page</span>
+            <i class="fa-solid fa-box-open"></i>
+        </a>
+
+        <a href="about.html">
+            <span>About Page</span>
+            <i class="fa-solid fa-circle-info"></i>
+        </a>
+
+        <a href="help.html">
+            <span>Help</span>
+            <i class="fa-solid fa-circle-question"></i>
+        </a>
+
+        <a href="contactus.html">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+    <span class="theme-toggle-text">Dark Mode</span>
+</button>
+
+    </nav>
+</aside>
+
+<!-- ===== MAIN SITE ===== -->
+<!-- Wraps the main visible website -->
+<div class="site-wrapper">
+
+    <!-- Header section -->
+    <header class="top-header">
+
+        <!-- Row holding left and right header content -->
+        <div class="header-row">
+
+            <!-- Left side of header -->
+            <div class="left-header">
+
+                <!-- Mobile menu button -->
+                <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                    <!-- Hamburger icon -->
+                </button>
+
+                <!-- Sears logo -->
+                <a href="index.html" class="brand-name">SEARS</a>
+
+                <!-- Desktop navigation menu -->
+                <nav class="desktop-nav">
+                    <a href="index.html">Home</a>
+                    <a href="search.html">Search</a>
+                    <a href="product.html">Products</a>
+                    <a href="about.html">About</a>
+                    <a href="help.html">Help</a>
+                    <a href="contactus.html">Contact Us</a>
+                    <a href="case-study.html">Case Study</a>
+                </nav>
+            </div>
+
+            <!-- Right side of header -->
+            <div class="right-header">
+                <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                    </button>
+
+                <!-- Shopping cart icon -->
+                <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <!-- Shows cart item count -->
+                    <span id="cartCount" class="cart-count">0</span>
+                </a>
+
+                <!-- User account icon -->
+                <a href="signin.html" class="icon-button" aria-label="User account">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Search bar below header -->
+        <div class="search-bar">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <!-- Search icon -->
+
+            <input type="text" id="headerSearchInput" placeholder="Search">
+            <!-- Search input field -->
+
+            <div id="suggestions"></div>
+            <!-- Search suggestions appear here -->
+
+        </div>
+
+    </header>
+
+    <!-- Main page content -->
+    <main class="main-content">
+
+        <!-- Category buttons section -->
+        <section class="category-buttons">
+
+            <a href="appliances.html">
+                <button>Appliances</button>
+            </a>
+
+            <a href="tools.html">
+                <button>Tools</button>
+            </a>
+
+            <a href="clothing.html">
+                <button>Clothing</button>
+            </a>
+
+            <a href="deals.html">
+                <button>Deals</button>
+            </a>
+
+        </section>
+
+        <!-- Promo section -->
+        <section class="promo-section">
+
+            <h2>PROMO</h2>
+
+            <!-- Row for promo image carousel -->
+            <div class="carousel-row">
+
+                <!-- Previous promo button -->
+                <button class="arrow-button" id="promoPrev">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                </button>
+
+                <!-- Promo images -->
+                <div class="promo-display">
+                    <img id="promoLeftImage" src="images/promo-tools.jpg" alt="Promo left image">
+                    <img id="promoRightImage" src="images/promo-sale.jpg" alt="Promo right image">
+                </div>
+
+                <!-- Next promo button -->
+                <button class="arrow-button" id="promoNext">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                </button>
+
+            </div>
+
+            <!-- Dots showing current promo slide -->
+            <div class="dots" id="promoDots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+        </section>
+
+        <!-- Popular section -->
+        <section class="popular-section">
+
+            <h2>POPULAR</h2>
+
+            <!-- Row for popular item carousel -->
+            <div class="carousel-row">
+
+                <!-- Previous popular button -->
+                <button class="arrow-button" id="popularPrev">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                </button>
+
+                <!-- Popular cards -->
+                <div class="popular-cards">
+
+                    <!-- Card 1 -->
+                    <div class="card">
+                        <img id="popularImage1" src="images/fashion.jpg" alt="Fashion">
+                        <div class="card-label" id="popularLabel1">Fashion</div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card">
+                        <img id="popularImage2" src="images/tools.jpg" alt="Tools">
+                        <div class="card-label" id="popularLabel2">Tools</div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card">
+                        <img id="popularImage3" src="images/outdoor.jpg" alt="Outdoor">
+                        <div class="card-label" id="popularLabel3">outdoor</div>
+                    </div>
+
+                </div>
+
+                <!-- Next popular button -->
+                <button class="arrow-button" id="popularNext">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                </button>
+
+            </div>
+
+            <!-- Dots showing current popular slide -->
+            <div class="dots" id="popularDots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer section -->
+    <footer class="bottom-footer">
+        <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+        <p>CAREERS | STORE LOCATOR</p>
+    </footer>
+
+</div>
+
+<!-- Loading screen shown during page transitions -->
+<div class="page-loader" id="pageLoader">
+
+    <!-- Spinner animation -->
+    <div class="loader-spinner"></div>
+
+    <!-- Loading text -->
+    <p>Loading...</p>
+
+</div>
+
+<!-- Connects JavaScript file -->
+<script src="script.js"></script>
+
+</body>
+</html>

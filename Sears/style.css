@@ -1,0 +1,1768 @@
+/* ========================================
+   GLOBAL RESET
+========================================
+This removes the browser's default spacing
+so all elements start with a clean layout.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   THEME COLORS
+========================================
+These variables control the colors for light
+mode and dark mode across the whole website.
+*/
+:root {
+    --page-bg: #e9e9e9;
+    --site-bg: #f8f8f8;
+    --main-bg: #f2f2f2;
+
+    --header-bg: #0457c7;
+    --header-text: #ffffff;
+
+    --sidebar-bg: #f4f4f4;
+    --sidebar-hover: #e5e5e5;
+
+    --card-bg: #ffffff;
+    --surface-soft: #f5f5f5;
+    --surface-muted: #eef1f5;
+    --promo-image-bg: #d9f4f4;
+    --search-card-bg: #e9e2ec;
+    --search-card-hover: #e7bde8;
+    --search-circle-bg: #d3c5d9;
+
+    --text-color: #111111;
+    --muted-text: #555555;
+    --header-icon: #ffffff;
+
+    --input-bg: #ffffff;
+    --input-text: #111111;
+    --input-border: #cccccc;
+
+    --border-color: #cccccc;
+    --loader-overlay: rgba(255, 255, 255, 0.92);
+    --loader-text: #111111;
+    --overlay-bg: rgba(0, 0, 0, 0.35);
+
+    --accent-color: var(--accent-color);
+    --accent-hover: #023e9a;
+    --button-bg: #0b5ed7;
+    --button-hover: #084db3;
+    --success-color: var(--success-color);
+    --error-color: var(--error-color);
+
+    --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+    --page-bg: #0f172a;
+    --site-bg: #111827;
+    --main-bg: #1f2937;
+
+    --header-bg: #020617;
+    --header-text: #f8fafc;
+
+    --sidebar-bg: #020617;
+    --sidebar-hover: #1e293b;
+
+    --card-bg: #1e293b;
+    --surface-soft: #273449;
+    --surface-muted: #334155;
+    --promo-image-bg: #243447;
+    --search-card-bg: #243447;
+    --search-card-hover: #334155;
+    --search-circle-bg: #475569;
+
+    --text-color: #f8fafc;
+    --muted-text: #cbd5e1;
+    --header-icon: #f8fafc;
+
+    --input-bg: #1e293b;
+    --input-text: #f8fafc;
+    --input-border: #475569;
+
+    --border-color: #475569;
+    --loader-overlay: rgba(15, 23, 42, 0.92);
+    --loader-text: #f8fafc;
+    --overlay-bg: rgba(2, 6, 23, 0.7);
+
+    --accent-color: #60a5fa;
+    --accent-hover: #3b82f6;
+    --button-bg: #2563eb;
+    --button-hover: #1d4ed8;
+    --success-color: #4ade80;
+    --error-color: #f87171;
+
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.35);
+    --shadow-medium: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* ========================================
+   GLOBAL PAGE STYLES
+========================================
+These styles control the basic look of the
+whole website, like body size, font, colors,
+and image behavior.
+*/
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    background-color: var(--page-bg);
+    color: var(--text-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* This wraps the whole page and keeps the layout centered */
+.site-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: var(--site-bg);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================
+   HEADER
+========================================
+This section styles the top header area,
+including the logo, navigation, icons,
+and search bar.
+*/
+.top-header {
+    background-color: var(--header-bg);
+    padding: clamp(16px, 2vw, 24px);
+}
+
+/* This arranges the left and right header parts in one row */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+/* Left side of header: hamburger button + logo */
+.left-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Right side of header: icons like cart and profile */
+.right-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Sears logo text */
+.brand-name {
+    color: var(--header-text);
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Desktop nav
+   This shows the normal navigation links on larger screens.
+*/
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-left: 20px;
+}
+
+.desktop-nav a {
+    color: var(--header-text);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.desktop-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile hamburger hidden by default
+   This stays hidden until smaller screen sizes.
+*/
+.mobile-menu-button {
+    display: none;
+}
+
+.mobile-theme-toggle {
+    display: none;
+}
+
+/* Shared icon button style */
+.icon-button {
+    background: none;
+    border: none;
+    color: var(--header-icon);
+    font-size: 1.8rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Search bar container */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--header-text);
+    border-radius: 8px;
+    padding: 12px 15px;
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Search icon inside the bar */
+.search-bar i {
+    color: var(--muted-text);
+}
+
+/* Search input field */
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--input-text);
+}
+
+/* cart adding
+   This positions the cart number badge on top of the cart icon.
+*/
+.cart-icon-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    background-color: var(--error-color);
+    color: var(--header-text);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+}
+
+/* ========================================
+   MAIN LAYOUT
+========================================
+This styles the main section of each page.
+*/
+.main-content {
+    flex: 1;
+    padding: clamp(20px, 3vw, 40px);
+    background-color: var(--main-bg);
+    width: 100%;
+}
+
+/* ========================================
+   CATEGORY BUTTONS
+========================================
+This styles the row of category buttons,
+including their hover effect.
+*/
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.category-buttons button {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.category-buttons button:hover {
+    background-color: rgb(30, 30, 160);
+}
+
+/* ========================================
+   SECTION HEADINGS
+========================================
+This styles the titles above the promo and
+popular sections.
+*/
+.promo-section h2,
+.popular-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+/* ========================================
+   SHARED CAROUSEL ROW
+========================================
+This arranges the slider arrows and content
+in a row.
+*/
+.carousel-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Arrow buttons for sliders */
+.arrow-button {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   HOME PAGE PROMO
+========================================
+This styles the promo image section so it
+shows as 2 side-by-side images.
+*/
+.promo-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.promo-display img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+/* ========================================
+   DOTS
+========================================
+These are the little slider dots under the
+carousels.
+*/
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 45px;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #cfcfcf;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.dot:hover {
+    transform: scale(1.2);
+}
+
+/* Active dot for the current slide */
+.dot.active {
+    background-color: var(--text-color);
+}
+
+/* ========================================
+   HOME PAGE POPULAR CARDS
+========================================
+This creates the 3-card layout for the
+popular categories section.
+*/
+.popular-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.popular-cards .card {
+    background-color: var(--header-text);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.popular-cards .card img {
+    width: 100%;
+    height: 380px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background-color: var(--promo-image-bg);
+    flex-shrink: 0;
+}
+
+/* Label underneath each card image */
+.card-label {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    text-align: center;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+/* ========================================
+   FOOTER
+========================================
+This styles the bottom footer of the site.
+*/
+.bottom-footer {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    text-align: center;
+    padding: 25px 15px;
+    line-height: 1.8;
+    margin-top: auto;
+}
+
+/* ========================================
+   SIDEBAR
+========================================
+These styles control the overlay and the
+slide-out sidebar menu.
+*/
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--overlay-bg);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 998;
+}
+
+/* Overlay becomes visible when sidebar opens */
+.sidebar-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Sidebar panel itself */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 300px;
+    max-width: 80%;
+    height: 100%;
+    background-color: var(--sidebar-bg);
+    box-shadow: var(--shadow-medium);
+    transition: left 0.3s ease;
+    z-index: 999;
+    padding: 20px;
+}
+
+/* Moves sidebar into view */
+.sidebar.active {
+    left: 0;
+}
+
+/* Top row inside sidebar */
+.sidebar-top {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+/* Close button inside sidebar */
+.close-sidebar {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Sidebar links layout */
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.sidebar-links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    padding: 10px 4px;
+    border-radius: 8px;
+}
+
+.sidebar-links a:hover {
+    background-color: var(--sidebar-hover);
+}
+
+.sidebar-links i {
+    font-size: 2rem;
+}
+
+/* ========================================
+   SEARCH PAGE
+========================================
+These styles are only for the search page,
+including the search box, result cards,
+and top searches layout.
+*/
+.search-page .main-content {
+    padding: 15px;
+    background-color: var(--main-bg);
+}
+
+.search-page .search-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-page .search-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: var(--input-bg);
+    border-radius: 25px;
+    padding: 10px 15px;
+    border: 1px solid var(--input-border);
+    box-shadow: var(--shadow-soft);
+}
+
+.search-page .search-box i {
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+.search-page .search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    background: transparent;
+    color: var(--input-text);
+}
+
+.search-page .search-icons {
+    display: flex;
+    gap: 6px;
+}
+
+.search-page .icon-btn {
+    background: var(--surface-muted);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-page .icon-btn i {
+    color: var(--accent-color);
+    font-size: 16px;
+}
+
+.search-page .top-searches h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+/* Individual search result card */
+.search-page .search-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--search-card-bg);
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.search-page .search-card:hover {
+    background-color: var(--search-card-hover);
+}
+
+.search-page .card-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-page .circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--search-circle-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.search-page .title {
+    font-weight: bold;
+    margin: 0;
+}
+
+.search-page .subtitle {
+    font-size: 12px;
+    margin: 0;
+    color: var(--muted-text);
+}
+
+.search-page .search-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Status text like "Searching..." or "Results loaded" */
+.search-status {
+    text-align: center;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 15px 0;
+    min-height: 24px;
+}
+
+/* Suggestions dropdown
+   This is the dropdown that appears under the search bar.
+*/
+#suggestions {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    top: 100%;
+    left: 0;
+    border-radius: 0 0 8px 8px;
+}
+
+#suggestions div {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#suggestions div:hover {
+    background-color: var(--surface-soft);
+}
+
+/* ========================================
+   ABOUT PAGE
+========================================
+These styles are for the about page text,
+faq area, and load more button.
+*/
+.load-more {
+    display: block;
+    margin: 20px auto;
+    font-size: 115%;
+}
+
+.about-page .main-content h1 {
+    font-size: 32px;
+}
+
+.timeline-text p {
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.timeline-text .year {
+    font-size: 2rem;
+}
+
+.footer-links a {
+    font-size: 1.1rem;
+}
+
+.faq-list p {
+    font-size: 1.2rem;
+}
+
+.form-page .faq-list p {
+    text-align: left;
+}
+
+.faq-list h1 {
+    font-size: 1.5rem;
+}
+
+.top-text p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.main-content h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* ========================================
+   HELP PAGE
+========================================
+These styles are for the help page hero,
+search area, and dropdown help categories.
+*/
+.help-hero {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.help-hero-text h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.help-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+/* Each help category block */
+.help-category {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+    padding: 15px 0;
+}
+
+.help-category h3 {
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.help-category p {
+    font-size: 1.9rem;
+    width: 80%;
+}
+
+/* Circle arrow button */
+.arrow-btn {
+    background-color: var(--button-bg);
+    color: var(--header-text);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Help page image */
+.help-hero img {
+    width: 50%;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* ========================================
+   PRODUCT PAGE
+========================================
+These styles control the product cards and
+add-to-cart buttons on the product page.
+*/
+.product {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: var(--main-bg);
+    padding: 20px;
+}
+
+.product .card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--header-text);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-medium);
+}
+
+.product .card img {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product .card > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product h2,
+.product h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.product p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* Product page cart button */
+.product .cart-btn {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    width: fit-content;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    min-width: 120px;
+    text-align: center;
+}
+
+.product .cart-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Limits text width inside product card */
+.text {
+    max-width: 300px;
+}
+
+/* ========================================
+   SUCCESS PAGES
+========================================
+These styles are used for success pages like
+sign up success or sign in success.
+*/
+.success {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.success h1 {
+    margin-bottom: 20px;
+    color: var(--success-color);
+}
+
+/* ========================================
+   PAGE LOADER
+========================================
+This section styles the full-screen loading
+overlay, loading spinner, and progress bar.
+*/
+.page-loader {
+    position: fixed;
+    inset: 0;
+    background-color: var(--loader-overlay);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+/* Loader becomes visible when active class is added */
+.page-loader.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Animated spinner circle */
+.loader-spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid var(--surface-muted);
+    border-top: 5px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.page-loader p {
+    font-size: 1rem;
+    color: var(--loader-text);
+    font-weight: bold;
+}
+
+/* Spinner rotation animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Progress bar
+   The outer bar is gray and the inner fill grows over time.
+*/
+.progress-bar-box {
+    width: 260px;
+    height: 18px;
+    background-color: var(--surface-muted);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    width: 0%;
+    height: 100%;
+    background-color: var(--header-bg);
+    border-radius: 999px;
+    transition: width 0.2s linear;
+}
+
+/* ========================================
+   BUTTONS
+========================================
+These are shared button styles used across
+different pages.
+*/
+.cart-btn,
+.place-order-btn,
+.help-page-btn {
+    background-color: var(--button-bg);
+    color: var(--header-text);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.2s ease, background-color 0.3s;
+}
+
+.cart-btn:hover,
+.place-order-btn:hover,
+.help-page-btn:hover {
+    background-color: var(--button-hover);
+}
+
+/* Loading button look */
+.cart-btn.loading,
+.icon-btn.loading,
+.icon-button.loading {
+    opacity: 0.7;
+    pointer-events: none;
+    cursor: wait;
+}
+
+/* Disabled button look */
+.cart-btn:disabled,
+.icon-btn:disabled,
+.icon-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ========================================
+   SKELETON LOADING CARDS
+========================================
+These styles create the fake loading cards
+used on the search page while content loads.
+*/
+.skeleton-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    min-height: 110px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skeleton-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skeleton-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--surface-muted);
+}
+
+.skeleton-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skeleton-line {
+    height: 12px;
+    border-radius: 6px;
+    background: var(--surface-muted);
+}
+
+.skeleton-line.title {
+    width: 120px;
+}
+
+.skeleton-line.subtitle {
+    width: 180px;
+}
+
+.skeleton-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+    background: var(--surface-muted);
+}
+
+/* Shimmer effect for skeleton loading */
+.skeleton-circle,
+.skeleton-line,
+.skeleton-image {
+    background: linear-gradient(90deg, var(--surface-muted) 25%, var(--surface-soft) 50%, var(--surface-muted) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ========================================
+   HELP / CONFIRMATION BOXES
+========================================
+These styles are used for confirmation pages,
+help boxes, and centered button sections.
+*/
+.confirmation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.confirmation-container h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.confirmation-container p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: var(--muted-text);
+}
+
+.confirmation-container strong {
+    color: var(--accent-color);
+    font-size: 18px;
+}
+
+.home-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: var(--accent-color);
+    color: var(--header-text);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.help-box {
+    background-color: var(--header-text);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.help-box h2 {
+    margin-bottom: 10px;
+}
+
+.help-box p {
+    margin: 5px 0;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+/* ========================================
+   THEME TOGGLE
+========================================
+These styles control the dark mode buttons in
+the desktop header and mobile sidebar.
+*/
+.theme-toggle-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.theme-toggle-button:hover {
+    transform: translateY(-1px);
+}
+
+.desktop-theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    min-height: 48px;
+    color: var(--header-icon);
+}
+
+.mobile-theme-toggle {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background-color: var(--surface-soft);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-soft);
+    font-size: 1rem;
+}
+
+.mobile-theme-toggle:hover {
+    background-color: var(--surface-muted);
+}
+
+.theme-toggle-text {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+/* ========================================
+   GLOBAL THEME TRANSITIONS
+========================================
+These make color changes look smooth when the
+theme changes between light and dark mode.
+*/
+body,
+.site-wrapper,
+.main-content,
+.top-header,
+.bottom-footer,
+.sidebar,
+.search-bar,
+.search-page .search-box,
+.search-page .search-card,
+.popular-cards .card,
+.product,
+.product .card,
+.contact-form-section,
+.help-box,
+.appliance-card,
+input,
+textarea,
+select,
+button,
+a,
+#suggestions {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* ========================================
+   ACCESSIBILITY
+========================================
+This adds a clear yellow outline when search
+inputs are focused so they are easier to see.
+*/
+.search-bar input:focus,
+.search-here input:focus,
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid #eb0202;
+    background-color: var(--input-bg);
+}
+
+/* ========================================
+   LARGE DESKTOP
+========================================
+These styles adjust the layout for very large
+screens.
+*/
+@media screen and (min-width: 1200px) {
+    .promo-display img {
+        height: 320px;
+    }
+
+    .product .card img {
+        height: auto;
+    }
+
+    .desktop-nav a {
+        font-size: 1.05rem;
+    }
+}
+
+/* ========================================
+   TABLET
+========================================
+These styles adjust the layout for tablet-size
+screens.
+*/
+@media (max-width: 768px) {
+    .brand-name {
+        font-size: 1.6rem;
+    }
+
+    .promo-display img {
+        height: 220px;
+    }
+
+    .desktop-nav {
+        gap: 12px;
+        margin-left: 12px;
+        flex-wrap: wrap;
+    }
+
+    .desktop-nav a {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   PHONE
+========================================
+These styles adjust the layout for smaller
+phone screens so the design becomes more
+mobile friendly.
+*/
+@media (max-width: 600px) {
+    .top-header {
+        padding: 15px;
+    }
+
+    .header-row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .left-header {
+        gap: 10px;
+    }
+
+    .right-header {
+        gap: 10px;
+        margin-top: 0;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+
+    .desktop-theme-toggle {
+        display: none;
+    }
+
+    .mobile-theme-toggle {
+        display: flex;
+    }
+
+    .mobile-menu-button {
+        display: inline-flex;
+    }
+
+    .brand-name {
+        font-size: 1.8rem;
+    }
+
+    .icon-button {
+        font-size: 1.6rem;
+    }
+
+    .search-bar {
+        margin-top: 14px;
+        padding: 10px 12px;
+    }
+
+    .search-bar input {
+        font-size: 1rem;
+    }
+
+    .category-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-buttons button {
+        width: 90%;
+    }
+
+    .carousel-row {
+        gap: 8px;
+    }
+
+    .arrow-button {
+        font-size: 2rem;
+    }
+
+    .promo-display {
+        grid-template-columns: 1fr;
+    }
+
+    .promo-display img {
+        height: 200px;
+    }
+
+    .popular-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .popular-cards .card img {
+        height: 260px;
+    }
+
+    .promo-section h2,
+    .popular-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .search-page .search-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-page .search-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .help-category {
+        padding: 30px 0;
+    }
+
+    .product .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .product .card img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .product .card > div {
+        width: 100%;
+    }
+}
+
+/* four html for home page
+   These styles are for the appliances page layout.
+*/
+.appliances-page {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* Title used on category-style pages */
+.page-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+/* Grid layout
+   This creates a responsive grid for appliances.
+*/
+.appliance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Cards
+   Individual appliance product cards.
+*/
+.appliance-card {
+    background: var(--input-bg);
+    border-radius: 12px;
+    padding: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.appliance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.appliance-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.appliance-card h3 {
+    margin-top: 10px;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+/* cart toast
+   Small popup message that appears when an item is added.
+*/
+.cart-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--text-color);
+    color: var(--header-text);
+    padding: 12px 18px;
+    border-radius: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 3000;
+}
+
+.cart-toast.show {
+    opacity: 1;
+}
+
+/* 8 css for cart htmlll
+   Styles for the cart page container.
+*/
+.cart-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* HERO PROMO BANNER
+   Large banner image section.
+*/
+.promo-banner {
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.promo-banner img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* optional: bigger on desktop
+   Makes the banner image taller on wider screens.
+*/
+@media (min-width: 900px) {
+    .promo-banner img {
+        height: 260px;
+    }
+}
+
+/* Contact US
+   Styles for the contact us form section.
+*/
+.contact-form-section {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: var(--header-text);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.contact-form-section h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* Valid input field */
+.input-valid {
+    border-color: var(--success-color) !important;
+    box-shadow: 0 0 6px rgba(0,128,0,0.2);
+}
+
+/* Invalid input field */
+.input-invalid {
+    border-color: var(--error-color) !important;
+    box-shadow: 0 0 6px rgba(255,0,0,0.2);
+}
+
+/* Hidden error text under inputs */
+.form-error {
+    display: none;
+    color: var(--error-color);
+    font-size: 13px;
+    margin-top: -8px;
+    margin-bottom: 4px;
+}
+
+/* Show error text when needed */
+.form-error.show {
+    display: block;
+}
+
+/* DARK MODE FULL FIX */
+
+/* Page background */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Cards (your product boxes) */
+body.dark-mode .card,
+body.dark-mode .product-card,
+body.dark-mode .main-content > section {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+/* Text inside cards */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode span {
+    color: #ffffff;
+}
+
+/* Price / small text */
+body.dark-mode .price,
+body.dark-mode .details {
+    color: #cccccc;
+}
+
+/* Buttons */
+body.dark-mode button {
+    background-color: #0d1b2a;
+    color: #ffffff;
+}
+
+/* Search bar */
+body.dark-mode input {
+    background-color: #2a2a2a;
+    color: white;
+}
+
+/* Header / navbar */
+body.dark-mode .top-header {
+    background-color: #0d1b2a;
+}
+/* Case Study Page */
+.case-study {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.case-study h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.case-study h2 {
+    margin-top: 30px;
+    color: #0457c7;
+}
+.case-study {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    line-height: 1.6;
+}
+
+.case-hero {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.case-label {
+    font-weight: bold;
+    color: #0457c7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.case-study h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.case-study h2 {
+    margin-top: 35px;
+    color: #0457c7;
+}
+
+.case-study section {
+    margin-bottom: 35px;
+}
+
+.case-study ul {
+    margin-left: 25px;
+}
+
+.case-image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.case-image-grid figure {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.case-image-grid img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+.case-image-grid figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--muted-text);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 22px;
+    background: #0457c7;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+@media (max-width: 700px) {
+    .case-image-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!-- Tells the browser this is an HTML5 document -->
+
+<html lang="en">
+<!-- Starts the HTML page and sets language to English -->
+
+<head>
+<!-- The head section stores page title, settings, and CSS links -->
+
+<meta charset="UTF-8">
+<!-- Allows standard text characters -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Makes the page responsive on phones, tablets, and desktops -->
+
+<title>Sign In</title>
+<!-- Title shown on the browser tab -->
+
+<link rel="stylesheet" href="style.css">
+<!-- Main CSS file for styling -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!-- Font Awesome icon library -->
+</head>
+
+<body class="signin-page">
+<!-- Everything visible on the page starts here -->
+<!-- signin-page class allows page-specific styling -->
+
+<!-- ===== SIDEBAR ===== -->
+<!-- Dark overlay shown when sidebar opens -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Sidebar navigation menu -->
+<aside class="sidebar" id="sidebar">
+
+    <!-- Top section of sidebar with close button -->
+    <div class="sidebar-top">
+        <button class="close-sidebar" id="closeSidebar">
+            <i class="fa-solid fa-xmark"></i>
+            <!-- X icon closes sidebar -->
+        </button>
+    </div>
+
+    <!-- Sidebar navigation links -->
+    <nav class="sidebar-links">
+
+        <a href="search.html">
+            <span>Search Page</span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="index.html">
+            <span>Home Page</span>
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="product.html">
+            <span>Product Page</span>
+            <i class="fa-solid fa-box-open"></i>
+        </a>
+
+        <a href="about.html">
+            <span>About Page</span>
+            <i class="fa-solid fa-circle-info"></i>
+        </a>
+
+        <a href="help.html">
+            <span>Help</span>
+            <i class="fa-solid fa-circle-question"></i>
+        </a>
+
+        <a href="contactus.html">
+            <span>Contact Us</span>
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        <button class="theme-toggle-button mobile-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+    <span class="theme-toggle-text">Dark Mode</span>
+</button>
+
+    </nav>
+</aside>
+
+<!-- ===== MAIN SITE ===== -->
+<!-- Wraps the visible website content -->
+<div class="site-wrapper">
+
+<header class="top-header">
+<!-- Top header section -->
+
+    <div class="header-row">
+    <!-- Row holding left and right sides of header -->
+
+        <div class="left-header">
+        <!-- Left side of header -->
+
+            <button class="icon-button mobile-menu-button" id="openSidebar" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+                <!-- Hamburger menu icon -->
+            </button>
+
+            <a href="index.html" class="brand-name">SEARS</a>
+            <!-- Sears logo linking to homepage -->
+
+            <nav class="desktop-nav">
+            <!-- Desktop navigation links -->
+                <a href="index.html">Home</a>
+                <a href="search.html">Search</a>
+                <a href="product.html">Products</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+                <a href="contactus.html">Contact Us</a>
+                <a href="case-study.html">Case Study</a>
+            </nav>
+        </div>
+
+        <div class="right-header">
+        <!-- Right side of header -->
+         <button class="icon-button theme-toggle-button desktop-theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                    </button>
+
+            <a href="cart.html" class="icon-button cart-icon-wrapper" aria-label="Shopping cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <!-- Shopping cart icon -->
+
+                <span id="cartCount" class="cart-count">0</span>
+                <!-- Shows number of items in cart -->
+            </a>
+
+            <a href="signin.html" class="icon-button" aria-label="User account">
+                <i class="fa-solid fa-user"></i>
+                <!-- User account icon -->
+            </a>
+        </div>
+
+    </div>
+
+    <div class="search-bar">
+    <!-- Search bar below header -->
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <!-- Search icon -->
+
+        <input type="text" id="headerSearchInput" placeholder="Search">
+        <!-- Search input field -->
+
+        <div id="suggestions"></div>
+        <!-- Search suggestions appear here -->
+    </div>
+
+</header>
+
+<!-- ===== SIGN IN FORM ===== -->
+<main class="form-page">
+<!-- Main sign in form section -->
+
+    <h2>Sign In</h2>
+    <!-- Page heading -->
+
+    <label>Enter login ID:</label>
+    <!-- Username label -->
+
+    <input type="text" placeholder="Enter username">
+    <!-- Username input field -->
+
+    <label>Enter password:</label>
+    <!-- Password label -->
+
+    <input type="password" placeholder="Enter password">
+    <!-- Password input field -->
+
+    <button type="button" class="cart-btn" id="signinButton">
+        Sign In
+    </button>
+    <!-- Button used to sign in -->
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bottom-footer">
+<!-- Footer section -->
+    <p>HELP | TRACK ORDER | RETURNS | PRIVACY TERMS</p>
+    <p>CAREERS | STORE LOCATOR</p>
+</footer>
+
+</div>
+
+<!-- Loading screen shown during sign in or page transitions -->
+<div class="page-loader" id="pageLoader">
+
+    <p id="loaderText">Loading...</p>
+    <!-- Loading message -->
+
+    <div class="progress-bar-box">
+        <!-- Outer progress bar container -->
+
+        <div class="progress-bar-fill" id="progressBarFill"></div>
+        <!-- Inner filling progress bar -->
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<!-- Connects JavaScript file -->
+
+</body>
+</html>
