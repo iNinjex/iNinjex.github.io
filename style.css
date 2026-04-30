@@ -63,18 +63,25 @@ h2 {
     border-radius: 6px;
 }
 
-.btn:hover {
-    background: #033a8c;
+.btn:hover,
+.btn-outline:hover {
+    background: #0457c7;
+    border-color: #0457c7;
+    color: #ffffff;
 }
 
+.btn,
 .btn-outline {
     display: inline-block;
     margin-top: 15px;
+    margin-right: 10px;
     padding: 10px 18px;
     border: 1px solid #0457c7;
     color: #0457c7;
+    background: transparent;
     text-decoration: none;
     border-radius: 6px;
+    transition: all 0.2s ease;
 }
 
 .btn-outline:hover {
