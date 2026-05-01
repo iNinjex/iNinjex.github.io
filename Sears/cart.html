@@ -165,7 +165,7 @@
         <a href="product.html" class="cart-btn">← Back to Product</a>
 
         <!-- One cart item block -->
-        <div class="cart-item">
+        <div class="cart-item" id="cartItem">
 
           <!-- Product image -->
           <img src="images/dress.jpg" alt="dress" class="cart-item-image">
@@ -178,7 +178,7 @@
             <p class="seller-text">Unique Bargains - a Sears Marketplace seller</p>
             <!-- Seller information -->
 
-            <p class="qty-text">Qty: 1</p>
+            <p class="qty-text">Qty: <span id="cartQty">1</span></p>
             <!-- Quantity of the item -->
 
             <p class="item-price">Dress - $49.99</p>
@@ -186,6 +186,10 @@
 
             <p class="shipping-text">Tax, Shipping & Delivery - $17.00</p>
             <!-- Extra cost details -->
+
+            <div class="cart-item-actions">
+              <button type="button" class="cart-btn remove-cart-btn" id="removeCartBtn">Remove From Cart</button>
+            </div>
           </div>
         </div>
       </div>
@@ -195,24 +199,24 @@
 
         <!-- Order summary box -->
         <div class="summary-box">
-          <h3>Order Summary (1 item)</h3>
+          <h3>Order Summary (<span id="summaryItemCount">1</span> item<span id="summaryPlural"></span>)</h3>
 
           <!-- Row showing merchandise subtotal -->
           <div class="summary-row">
             <span>Merchandise Subtotal</span>
-            <span>$128.00</span>
+            <span id="merchandiseSubtotal">$49.99</span>
           </div>
 
           <!-- Row showing tax and shipping -->
           <div class="summary-row">
             <span>Tax, Shipping & Delivery</span>
-            <span>$17.00</span>
+            <span id="shippingTotal">$17.00</span>
           </div>
 
           <!-- Total row with final estimated total and checkout details -->
           <div class="summary-row total-row">
             <span>Estimated Total</span>
-            <span>$145.00</span>
+            <span id="estimatedTotal">$66.99</span>
 
             <h4>Card Infomation</h4>
             <!-- Section title for card info -->
@@ -224,7 +228,7 @@
             <!-- Example pin shown on the page -->
 
             <!-- Button that sends the user to the order confirmation page -->
-            <button class="cart-btn" onclick="window.location.href='order-confirmation.html'">
+            <button class="cart-btn" id="placeOrderBtn" onclick="window.location.href='order-confirmation.html'">
               Place Order
             </button>
           </div>

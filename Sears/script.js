@@ -462,7 +462,8 @@ const addCartButtons = document.querySelectorAll(".add-cart-btn");
 const cartCount = document.getElementById("cartCount");
 
 // Get current cart total from localStorage, or start at 0
-let cartTotal = Number(localStorage.getItem("cartTotal")) || 0;
+const savedCartTotal = localStorage.getItem("cartTotal");
+let cartTotal = savedCartTotal === null ? 0 : Number(savedCartTotal) || 0;
 
 /*
 This function updates the cart badge number and hides it
@@ -514,6 +515,85 @@ if (addCartButtons.length > 0) {
         });
     });
 }
+
+/*
+========================================
+CART PAGE REMOVE BUTTON + SUMMARY UPDATE
+========================================
+This section lets the cart page remove one item at a time.
+It also updates the cart badge, quantity text, and order summary.
+*/
+const cartItem = document.getElementById("cartItem");
+const cartQty = document.getElementById("cartQty");
+const removeCartBtn = document.getElementById("removeCartBtn");
+const summaryItemCount = document.getElementById("summaryItemCount");
+const summaryPlural = document.getElementById("summaryPlural");
+const merchandiseSubtotal = document.getElementById("merchandiseSubtotal");
+const shippingTotal = document.getElementById("shippingTotal");
+const estimatedTotal = document.getElementById("estimatedTotal");
+const placeOrderBtn = document.getElementById("placeOrderBtn");
+const cartLeft = document.querySelector(".cart-left");
+
+const itemPrice = 49.99;
+const shippingPrice = 17.00;
+
+function money(amount) {
+    return "$" + amount.toFixed(2);
+}
+
+function updateCartPage() {
+    if (!cartItem) return;
+
+    if (cartTotal <= 0) {
+        cartTotal = 0;
+        localStorage.setItem("cartTotal", cartTotal);
+        updateCartBadge();
+
+        cartItem.classList.add("hidden");
+        if (summaryItemCount) summaryItemCount.textContent = "0";
+        if (summaryPlural) summaryPlural.textContent = "s";
+        if (merchandiseSubtotal) merchandiseSubtotal.textContent = money(0);
+        if (shippingTotal) shippingTotal.textContent = money(0);
+        if (estimatedTotal) estimatedTotal.textContent = money(0);
+        if (placeOrderBtn) placeOrderBtn.disabled = true;
+
+        if (cartLeft && !document.getElementById("emptyCartMessage")) {
+            const emptyMessage = document.createElement("p");
+            emptyMessage.id = "emptyCartMessage";
+            emptyMessage.className = "empty-cart-message";
+            emptyMessage.textContent = "Your cart is empty.";
+            cartLeft.appendChild(emptyMessage);
+        }
+
+        return;
+    }
+
+    cartItem.classList.remove("hidden");
+    const emptyMessage = document.getElementById("emptyCartMessage");
+    if (emptyMessage) emptyMessage.remove();
+
+    if (cartQty) cartQty.textContent = cartTotal;
+    if (summaryItemCount) summaryItemCount.textContent = cartTotal;
+    if (summaryPlural) summaryPlural.textContent = cartTotal === 1 ? "" : "s";
+    if (merchandiseSubtotal) merchandiseSubtotal.textContent = money(itemPrice * cartTotal);
+    if (shippingTotal) shippingTotal.textContent = money(shippingPrice);
+    if (estimatedTotal) estimatedTotal.textContent = money((itemPrice * cartTotal) + shippingPrice);
+    if (placeOrderBtn) placeOrderBtn.disabled = false;
+}
+
+updateCartPage();
+
+if (removeCartBtn) {
+    removeCartBtn.addEventListener("click", function () {
+        cartTotal--;
+        if (cartTotal < 0) cartTotal = 0;
+
+        localStorage.setItem("cartTotal", cartTotal);
+        updateCartBadge();
+        updateCartPage();
+    });
+}
+
 
 /*
 ========================================
@@ -852,6 +932,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const desktopIcon = document.querySelector(".desktop-theme-toggle i");
     const mobileText = document.querySelector(".mobile-theme-toggle .theme-toggle-text");
 
+    // Load the saved theme every time a new page opens.
+    const savedTheme = localStorage.getItem("siteTheme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+    } else {
+        document.body.classList.remove("dark-mode");
+    }
+
     function updateThemeUI() {
         const isDark = document.body.classList.contains("dark-mode");
 
@@ -868,8 +956,16 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleButtons.forEach(button => {
         button.addEventListener("click", function () {
             document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("siteTheme", "dark");
+            } else {
+                localStorage.setItem("siteTheme", "light");
+            }
+
             updateThemeUI();
         });
     });
+
     updateThemeUI();
 });
